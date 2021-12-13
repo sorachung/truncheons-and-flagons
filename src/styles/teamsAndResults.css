@@ -28,7 +28,8 @@
     flex: 1;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    text-align: center;
 }
 
 .joinTeamChunk {
@@ -38,4 +39,10 @@
 
 .incompleteTeamList {
     overflow: auto;
+}
+
+.joinTeamsList {
+    list-style: none;
+    text-align: left;
+    padding: 0px 5px;
 }
