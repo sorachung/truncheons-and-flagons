@@ -1,3 +1,4 @@
+import { JoinTeam } from "./TeamAndResults/TeamStuff/JoinTeam.js";
 import { CreateTeam } from "./TeamAndResults/TeamStuff/CreateTeam.js"
 
 export const TruncheonsAndFlagons = () => {
@@ -10,7 +11,7 @@ export const TruncheonsAndFlagons = () => {
                     ${CreateTeam()}
                 </div>
                 <div class="teamFormationChunk joinTeam">
-                    Enter Your Name and Pick a Team
+                    ${JoinTeam()}
                 </div>
                 <div class="teamFormationChunk incompleteTeamList">
                     Teams In Need Of Players
