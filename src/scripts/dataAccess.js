@@ -6,8 +6,9 @@ const applicationState = {
 };
 
 const API = `http://localhost:8088`;
+const mainContainer = document.querySelector(".container")
 
-//fetch each
+//fetch each resource
 
 export const fetchPlayers = () => {
     return fetch(`${API}/players`)
@@ -41,6 +42,8 @@ export const fetchGames = () => {
         });
 };
 
+//getters for each data collection
+
 export const getPlayers = () => {
     return applicationState.players.map((player) => ({ ...player }));
 };
@@ -56,3 +59,21 @@ export const getScores = () => {
 export const getGames = () => {
     return applicationState.games.map((game) => ({ ...game }));
 };
+
+// POST request for each resource
+
+export const saveTeam = (userServiceRequest) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userServiceRequest)
+    }
+
+    return fetch(`${API}/teams`, fetchOptions)
+        .then(response => response.json())
+        .then(() => {
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+        })
+    }
