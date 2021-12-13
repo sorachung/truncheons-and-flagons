@@ -1,6 +1,7 @@
 import { RecentGamesList } from "./TeamAndResults/RecentGamesList.js"
 import { JoinTeam } from "./TeamAndResults/TeamStuff/JoinTeam.js";
-import { CreateTeam } from "./TeamAndResults/TeamStuff/CreateTeam.js"
+import { CreateTeam } from "./TeamAndResults/TeamStuff/CreateTeam.js" 
+import { TeamList } from "./TeamAndResults/TeamStuff/TeamList.js";
 
 export const TruncheonsAndFlagons = () => {
     //call ticker function here for header
@@ -15,7 +16,7 @@ export const TruncheonsAndFlagons = () => {
                     ${JoinTeam()}
                 </div>
                 <div class="teamFormationChunk incompleteTeamList">
-                    Teams In Need Of Players
+                    ${TeamList()}
                 </div>
             </section>
             <section class="recentGameResults teamsAndResultsChunk">
