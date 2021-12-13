@@ -1,3 +1,4 @@
+import { RecentGamesList } from "./TeamAndResults/RecentGamesList.js"
 import { CreateTeam } from "./TeamAndResults/TeamStuff/CreateTeam.js"
 
 export const TruncheonsAndFlagons = () => {
@@ -17,10 +18,7 @@ export const TruncheonsAndFlagons = () => {
                 </div>
             </section>
             <section class="recentGameResults teamsAndResultsChunk">
-                Recent Game Results
-                <ul>
-                    <li>Function for Results Go Here</li>
-                </ul>
+                    ${RecentGamesList()}
             </section>
         </article>
 

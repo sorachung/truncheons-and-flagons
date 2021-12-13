@@ -170,8 +170,7 @@
     {
       "id": 2,
       "currentRound": 2,
-      "completed": false,
-      "dateFinished": 0
+      "completed": false
     }
   ]
 }
