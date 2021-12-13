@@ -46,7 +46,7 @@ mainContainer.addEventListener("click", clickEvent => {
             const updatedTeam = teams.find(team => team.id === userTeamChoice);
             updatedTeam.totalPlayers++;
             //now update it in the database and alert user
-            window.alert(`${userFistName} ${userLastName} has joined ${updatedTeam.name}`);
+            window.alert(`${userFirstName} ${userLastName} has joined ${updatedTeam.name}`);
             updateTeam(updatedTeam).then(() => savePlayer(dataToSendToAPI));
 
         } else {
