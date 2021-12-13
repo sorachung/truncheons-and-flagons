@@ -1,4 +1,4 @@
-import { getTeams, getPlayers } from "../../dataAccess.js";
+import { getTeams, savePlayer, updateTeam } from "../../dataAccess.js";
 
 const mainContainer = document.querySelector(".container");
 
@@ -25,19 +25,14 @@ export const JoinTeam = () => {
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "joinTeamButton") {
         //grab the necessary info
-        const userFirstName = document.querySelector("#firstName");
-        const userLastName = document.querySelector("#lastName");
-        const userCountry = document.querySelector("#country");
-        const teamSelect = parseInt(document.querySelector("#teamsToJoin"));
-        let userTeamChoice;
-        if (teamSelect) {
-        userTeamChoice = teamSelect.options[teamSelect.selectedINdex].value;
-        } else {
-            userTeamChoice = undefined;
-        }
-
+        const userFirstName = document.querySelector("#firstName").value;
+        const userLastName = document.querySelector("#lastName").value;
+        const userCountry = document.querySelector("#country").value;
+        const teamSelect = document.querySelector("#teamsToJoin");
+        const userTeamChoice = parseInt(teamSelect.options[teamSelect.selectedIndex].value);
         //make sure all of these actually have been selected
         if (userFirstName && userLastName && userTeamChoice && userCountry) {
+            //save the player
             const dataToSendToAPI = {
                 firstName: userFirstName,
                 lastName: userLastName,
@@ -46,8 +41,17 @@ mainContainer.addEventListener("click", clickEvent => {
             }
 
             savePlayer(dataToSendToAPI);
+
+            //update the team with one more player
+            //first find the team and change the player count of the object
+            const teams = getTeams();
+            const updatedTeam = teams.find(team => team.id === userTeamChoice);
+            updatedTeam.totalPlayers++;
+            //now update it in the database
+            updateTeam(updatedTeam);
+
         } else {
-            window.alert("message to say pick something, will change later");
+            document.querySelector("#joinTeamButton").innerHTML = "Missing Information";
         }
     }
 })

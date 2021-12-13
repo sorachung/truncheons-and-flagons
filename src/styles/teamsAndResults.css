@@ -9,7 +9,6 @@
     flex: 1;
 }
 
-
 /* all recent game list css go here */
 
 .recentGameResults {
@@ -27,9 +26,6 @@
     border: blue solid 2px;
     margin: 0px 5px;
     flex: 1;
-}
-
-.joinTeam {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
