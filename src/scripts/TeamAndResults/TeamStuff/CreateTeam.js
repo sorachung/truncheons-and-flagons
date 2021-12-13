@@ -33,7 +33,7 @@ mainContainer.addEventListener("click", (event) => {
                 seasonScore: 0,
                 totalPlayers: 0,
             };
-            message.innnerHTML = `You have created the team <br/>${newTeamName}!`;
+            window.alert(`You have created the team <br/>${newTeamName}!`);
             saveTeam(newTeam);
         }
     }
