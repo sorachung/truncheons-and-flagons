@@ -1,4 +1,4 @@
-
+import { CreateTeam } from "./TeamAndResults/TeamStuff/CreateTeam.js"
 
 export const TruncheonsAndFlagons = () => {
     //call ticker function here for header
@@ -7,7 +7,7 @@ export const TruncheonsAndFlagons = () => {
         <article class="teamsAndResults containerChunk">
             <section class="teamFormation teamsAndResultsChunk">
                 <div class="teamFormationChunk teamCreation">
-                    Create a Team
+                    ${CreateTeam()}
                 </div>
                 <div class="teamFormationChunk joinTeam">
                     Enter Your Name and Pick a Team

@@ -11,6 +11,9 @@
 .teamFormationChunk {
     border: blue solid 2px;
     margin: 0px 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 /* all recent game list css go here */
