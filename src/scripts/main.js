@@ -1,9 +1,13 @@
+import { fetchGames, fetchPlayers, fetchScores, fetchTeams } from "./dataAccess.js";
 import { TruncheonsAndFlagons } from "./TruncheonsAndFlagons.js";
 
 const mainContainer = document.querySelector(".container");
 
 const render = () => {
-    mainContainer.innerHTML = TruncheonsAndFlagons();
+    Promise.all([fetchPlayers(), fetchTeams(), fetchGames(), fetchScores()])
+    .then( () => {
+        mainContainer.innerHTML = TruncheonsAndFlagons();
+    })
 };
 
 render();
