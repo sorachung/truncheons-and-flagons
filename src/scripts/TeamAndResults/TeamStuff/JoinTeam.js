@@ -40,15 +40,14 @@ mainContainer.addEventListener("click", clickEvent => {
                 teamId: userTeamChoice
             }
 
-            savePlayer(dataToSendToAPI);
-
             //update the team with one more player
             //first find the team and change the player count of the object
             const teams = getTeams();
             const updatedTeam = teams.find(team => team.id === userTeamChoice);
             updatedTeam.totalPlayers++;
-            //now update it in the database
-            updateTeam(updatedTeam);
+            //now update it in the database and alert user
+            window.alert(`${userFirstName} ${userLastName} has joined ${updatedTeam.name}`);
+            updateTeam(updatedTeam).then(() => savePlayer(dataToSendToAPI));
 
         } else {
             document.querySelector("#joinTeamButton").innerHTML = "Missing Information";
