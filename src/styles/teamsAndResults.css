@@ -1,0 +1,31 @@
+.teamsAndResults {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.teamsAndResultsChunk {
+    border: green solid 2px;
+    margin: 3%;
+}
+
+.teamFormationChunk {
+    border: blue solid 2px;
+    margin: 0px 5px;
+}
+
+/* all recent game list css go here */
+
+.recentGameResults {
+    border: red solid 2px;
+    overflow: auto;
+}
+
+/* all team formation css go here */
+.teamFormation {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.incompleteTeamList {
+    overflow: auto;
+}

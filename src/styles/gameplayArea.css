@@ -1,0 +1,19 @@
+.gameplayArea {
+    display: flex;
+    flex-flow: column nowrap;
+    border: yellow solid 2px;
+}
+
+.gamePlayAreaChunk {
+    margin: 5px 0px;
+}
+
+/* current game scores css go here */
+.activeScoreBoard {
+    border: purple solid 2px;
+}
+
+/* game stuff goes here */
+.game {
+    border: maroon solid 2px;
+}
