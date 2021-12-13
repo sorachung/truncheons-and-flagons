@@ -4,7 +4,7 @@ export const RecentGamesList = () => {
     const games = getGames();
     const scores = getScores();
     const teams = getTeams();
-    let html = "<ul>";
+    let html = "<h2>Recent Game Results</h2><ul>";
     
     // find only completed games to display and only the last 15
     const completedGames = games.filter((game) => game.completed)
