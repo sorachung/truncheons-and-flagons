@@ -6,6 +6,7 @@ import {
 	updateGame
 } from "../../dataAccess.js";
 import { gameState } from "./Game.js";
+import { BackToSelectButton } from "./BackToSelectButton.js";
 
 export const ActiveGame = () => {
 	const scores = getScores();
@@ -46,9 +47,10 @@ export const ActiveGame = () => {
             </div>`;
 	});
 
-	//and finish with ending the input menu section and edding the button
+	//and finish with ending the input menu section and adding submit score and back button
 	html += `</section>
-    <button class="button" id="submitScoresButton">Submit Round ${game.currentRound} Scores</button>`;
+    <button class="button" id="submitScoresButton">Submit Round ${game.currentRound} Scores</button>
+    ${BackToSelectButton()}`;
 
 	return html;
 };

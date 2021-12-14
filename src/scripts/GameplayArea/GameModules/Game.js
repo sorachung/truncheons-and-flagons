@@ -44,14 +44,21 @@ export const gameState = {
 		},
 
 		ActiveGame: {
-            //for use if the active game does not end
-			gameSelectContinue() {
+			//for going back to the game select menu
+			gameSelect() {
 				this.state = "GameSelect";
+				mainContainer.dispatchEvent(
+					new CustomEvent("gameStateChanged")
+				);
+			},
+			//for submitting new scores but not leaving the activeGame Menu
+			activeGameContinue() {
+				this.state = "ActiveGame";
 				mainContainer.dispatchEvent(
 					new CustomEvent("gameplayAreaStateChanged")
 				);
 			},
-            // for use if the active game ends
+			// for use if the active game ends
 			gameSelectFinished() {
 				this.state = "GameSelect";
 				mainContainer.dispatchEvent(new CustomEvent("stateChanged"));
@@ -115,9 +122,9 @@ mainContainer.addEventListener("gameplayAreaStateChanged", (customEvent) => {
 		fetchGames(),
 		fetchScores()
 	]).then(() => {
-        const bannerEl = document.querySelector(".activeScoreBoard");
-        //HERE we will call the ActiveGameBannerFunction once it is made
-        bannerEl.innerHTML = "Active Game Scores Go Here"
+		const bannerEl = document.querySelector(".activeScoreBoard");
+		//HERE we will call the ActiveGameBannerFunction once it is made
+		bannerEl.innerHTML = "Active Game Scores Go Here";
 		const gameEl = document.querySelector(".game");
 		gameEl.innerHTML = Game();
 	});

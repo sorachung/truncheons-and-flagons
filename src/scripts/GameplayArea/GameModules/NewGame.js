@@ -7,6 +7,7 @@ import {
 	saveScore
 } from "../../dataAccess.js";
 import { gameState } from "./Game.js";
+import { BackToSelectButton } from "./BackToSelectButton.js";
 
 //html
 export const NewGame = () => {
@@ -61,6 +62,7 @@ export const NewGame = () => {
             </div>
         </section>
         <button class="button startGameButton" id="startGameButton">Start Game</button>
+		${BackToSelectButton()}
         `;
 };
 
