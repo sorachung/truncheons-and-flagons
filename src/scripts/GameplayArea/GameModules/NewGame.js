@@ -5,7 +5,8 @@ import {
 	getPlayers,
 	saveGame,
 	saveScore
-} from "../../dataAcces.js";
+} from "../../dataAccess.js";
+import { gameState } from "./Game.js";
 
 //html
 export const NewGame = () => {
@@ -64,7 +65,7 @@ export const NewGame = () => {
 };
 
 //grab maincontainer
-mainContainer = document.querySelector(".container");
+const mainContainer = document.querySelector(".container");
 
 //add in our event listener for showing rosters based on selection
 mainContainer.addEventListener("change", (changeEvent) => {
@@ -72,7 +73,7 @@ mainContainer.addEventListener("change", (changeEvent) => {
         const players = getPlayers();
 
         //grab the team number
-        const [,targetSelectNumber] = clickEvent.target.id.split('--');
+        const [,targetSelectNumber] = changeEvent.target.id.split('--');
         //use it to grab the correct roster ul
         const rosterListEl = document.querySelector(`#teamRoster--${targetSelectNumber}`)
         //with the correct html element identified we will now put in the roster list for the selected team
@@ -87,3 +88,44 @@ mainContainer.addEventListener("change", (changeEvent) => {
         }).join("");
 	}
 });
+
+//add in our event listener for clicking the button
+mainContainer.addEventListener("click", (clickEvent) => {
+    if (clickEvent.target.id === "startGameButton") {
+        //collect our team ids
+        const teamIds = [];
+        teamIds.push(parseInt(mainContainer.querySelector(`select[id="teamSelect--1"]`).value));
+        teamIds.push(parseInt(mainContainer.querySelector(`select[id="teamSelect--2"]`).value));
+        teamIds.push(parseInt(mainContainer.querySelector(`select[id="teamSelect--3"]`).value));
+
+        //create our game object
+        const gameToSendToAPI = {
+            currentRound: 1,
+            completed: false
+        };
+
+        //send game object to database
+
+        saveGame(gameToSendToAPI)
+        .then((res) => res.json())
+        .then((newGameFromAPI) => {
+            const gameIdentifier = newGameFromAPI.id;
+            const newScoresPromisesArray = [];
+            for(const teamIdentifier of teamIds) {
+                const scoreToSendToAPI = {
+                    gameId: gameIdentifier,
+                    teamId: teamIdentifier,
+                    roundOneScore: 0,
+                    roundTwoScore: 0,
+                    roundThreeScore: 0
+                };
+
+                newScoresPromisesArray.push(saveScore(scoreToSendToAPI));
+            }
+            return Promise.all(newScoresPromisesArray);
+        })
+        .then(() => {
+            gameState.changeState('gameSelect');
+        })
+    }
+})

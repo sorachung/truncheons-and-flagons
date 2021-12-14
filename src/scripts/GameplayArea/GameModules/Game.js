@@ -1,5 +1,8 @@
 import { GameSelect } from "./GameSelect.js";
+import { NewGame } from "./NewGame.js";
 
+//grab the main container
+const mainContainer = document.querySelector(".container");
 
 export const gameState = {
     //possible states GameSelect, NewGame, and ActiveGame
@@ -10,6 +13,7 @@ export const gameState = {
                 //change state
                 this.state = 'NewGame'
                 //make a statechange event to rerender I think the ones from gameselect will change this elements innerhtml. finished games should change change most html.
+                mainContainer.dispatchEvent(new CustomEvent("gameStateChanged"))
             },
 
             continueGame() {
@@ -20,6 +24,7 @@ export const gameState = {
         NewGame: {
             gameSelect() {
                 this.state = 'GameSelect'
+                mainContainer.dispatchEvent(new CustomEvent("gameStateChanged"))
             }
         },
 
@@ -48,7 +53,7 @@ export const Game = () => {
             break;
 
         case "NewGame" :
-            //run new game function
+            return NewGame();
             break;
 
         case "ActiveGame" :
@@ -56,3 +61,9 @@ export const Game = () => {
             break;
     }
 }
+
+//Event Listeners for State Changes
+mainContainer.addEventListener("gameStateChanged", customEvent => {
+    const gameEl = document.querySelector(".game");
+    gameEl.innerHTML = Game();
+})

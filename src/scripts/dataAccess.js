@@ -103,11 +103,7 @@ export const saveGame = (userServiceRequest) => {
 		body: JSON.stringify(userServiceRequest)
 	};
 
-	return fetch(`${API}/games`, fetchOptions)
-		.then((response) => response.json())
-		.then(() => {
-			mainContainer.dispatchEvent(new CustomEvent("stateChanged"));
-		});
+	return fetch(`${API}/games`, fetchOptions);
 };
 
 export const saveScore = (userServiceRequest) => {
@@ -119,11 +115,7 @@ export const saveScore = (userServiceRequest) => {
 		body: JSON.stringify(userServiceRequest)
 	};
 
-	return fetch(`${API}/scores`, fetchOptions)
-		.then((response) => response.json())
-		.then(() => {
-			mainContainer.dispatchEvent(new CustomEvent("stateChanged"));
-		});
+	return fetch(`${API}/scores`, fetchOptions);
 };
 
 //PUT request for each resource
