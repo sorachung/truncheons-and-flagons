@@ -1,0 +1,28 @@
+.teamTickerItem {
+    margin: 0 2em;
+    white-space: nowrap;
+}
+
+.header {
+    display: flex;
+    overflow: hidden;
+}
+
+.ticker {
+    display: flex;
+    flex-direction: row;
+    animation: ticker 15s infinite linear;
+}
+
+.ticker:hover {
+    animation-play-state: paused;
+}
+
+@keyframes ticker {
+    0% {
+        transform:translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
 @import "./teamsAndResults.css";
 @import "./gameplayArea.css";
+@import "./seasonScoreBanner.css";
 
 /* typography */
 body, button, input, select, textarea {
