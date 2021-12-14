@@ -2,7 +2,6 @@ import { RecentGamesList } from "./TeamAndResults/RecentGamesList.js"
 import { JoinTeam } from "./TeamAndResults/TeamStuff/JoinTeam.js";
 import { CreateTeam } from "./TeamAndResults/TeamStuff/CreateTeam.js" 
 import { TeamList } from "./TeamAndResults/TeamStuff/TeamList.js";
-import { GameSelect } from "./GameplayArea/GameModules/GameSelect.js";
 import { Game } from "./GameplayArea/GameModules/Game.js";
 
 export const TruncheonsAndFlagons = () => {

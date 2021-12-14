@@ -44,8 +44,17 @@ export const gameState = {
 		},
 
 		ActiveGame: {
-			gameSelect() {
+            //for use if the active game does not end
+			gameSelectContinue() {
 				this.state = "GameSelect";
+				mainContainer.dispatchEvent(
+					new CustomEvent("gameplayAreaStateChanged")
+				);
+			},
+            // for use if the active game ends
+			gameSelectFinished() {
+				this.state = "GameSelect";
+				mainContainer.dispatchEvent(new CustomEvent("stateChanged"));
 			}
 		}
 	},
@@ -88,17 +97,28 @@ export const Game = () => {
 
 //Event Listeners for State Changes
 mainContainer.addEventListener("gameStateChanged", (customEvent) => {
-	Promise.all([fetchPlayers(), fetchTeams(), fetchGames(), fetchScores()])
-		.then(() => {
-			const gameEl = document.querySelector(".game");
-			gameEl.innerHTML = Game();
-		});
+	Promise.all([
+		fetchPlayers(),
+		fetchTeams(),
+		fetchGames(),
+		fetchScores()
+	]).then(() => {
+		const gameEl = document.querySelector(".game");
+		gameEl.innerHTML = Game();
+	});
 });
 
 mainContainer.addEventListener("gameplayAreaStateChanged", (customEvent) => {
-	Promise.all([fetchPlayers(), fetchTeams(), fetchGames(), fetchScores()])
-		.then(() => {
-			const gameEl = document.querySelector(".gameplayArea");
-			gameEl.innerHTML = Game();
-		});
+	Promise.all([
+		fetchPlayers(),
+		fetchTeams(),
+		fetchGames(),
+		fetchScores()
+	]).then(() => {
+        const bannerEl = document.querySelector(".activeScoreBoard");
+        //HERE we will call the ActiveGameBannerFunction once it is made
+        bannerEl.innerHTML = "Active Game Scores Go Here"
+		const gameEl = document.querySelector(".game");
+		gameEl.innerHTML = Game();
+	});
 });

@@ -134,3 +134,27 @@ export const updateTeam = (userServiceRequest) => {
         mainContainer.dispatchEvent(new CustomEvent("stateChanged"));
     });
 };
+
+export const updateGame = (userServiceRequest) => {
+	const fetchOptions = {
+		method: "PUT",
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(userServiceRequest)
+	};
+
+	return fetch(`${API}/games/${userServiceRequest.id}`, fetchOptions);
+}
+
+export const updateScore = (userServiceRequest) => {
+	const fetchOptions = {
+		method: "PUT",
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(userServiceRequest)
+	};
+
+	return fetch(`${API}/scores/${userServiceRequest.id}`, fetchOptions);
+}
