@@ -1,3 +1,4 @@
+import { GameSelect } from "./GameSelect.js";
 
 
 export const gameState = {
@@ -43,7 +44,7 @@ export const Game = () => {
     switch (gameState.state) {
 
         case "GameSelect" :
-            //run game select funtion
+            return GameSelect();
             break;
 
         case "NewGame" :
