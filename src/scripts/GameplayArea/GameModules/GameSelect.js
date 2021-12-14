@@ -36,9 +36,9 @@ export const GameSelect = () => {
             if (game.currentRound === 1) {
                 return `${score.teamName}: 0`;
             } else if (game.currentRound === 2) {
-                return `${score.teamName}: ${score.roundOneScore}`;
+                return `${score.teamName}: ${score.round1Score}`;
             } else if (game.currentRound === 3) {
-                return `${score.teamName}: ${score.roundTwoScore}`;
+                return `${score.teamName}: ${score.round2Score}`;
             }
         });
 
@@ -59,7 +59,10 @@ mainContainer.addEventListener("click", (event) => {
         if (selectedGameId === "newGame") {
             gameState.changeState('newGame')
         } else {
-            gameState.changeState('continueGame')
+            //change active game number 
+            gameState.changeActiveGameId(parseInt(selectedGameId));
+            //now change state
+            gameState.changeState('continueGame');
         }
         
     }

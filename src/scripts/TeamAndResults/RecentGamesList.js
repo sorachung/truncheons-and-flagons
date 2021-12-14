@@ -28,7 +28,7 @@ export const RecentGamesList = () => {
             //add the object of team name and score to array
             threeTeamScores.push({
                 name: foundTeam.name,
-                score: foundScore.roundOneScore + foundScore.roundTwoScore + foundScore.roundThreeScore
+                score: foundScore.round1Score + foundScore.round2Score + foundScore.round3Score
             })
         }
 
