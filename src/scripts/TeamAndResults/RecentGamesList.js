@@ -12,7 +12,7 @@ export const RecentGamesList = () => {
         completedGames.sort((game1, game2) => game1.dateFinished - game2.dateFinished)
     }
 
-    completedGames.map((game) => {
+    completedGames.forEach((game) => {
         html += `<li>Game #${game.id}: `;
         
         // array that contains the three teams that participated in a game
