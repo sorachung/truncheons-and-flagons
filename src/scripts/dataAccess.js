@@ -94,6 +94,30 @@ export const savePlayer = (playerToSave) => {
 		});
 };
 
+export const saveGame = (userServiceRequest) => {
+	const fetchOptions = {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(userServiceRequest)
+	};
+
+	return fetch(`${API}/games`, fetchOptions);
+};
+
+export const saveScore = (userServiceRequest) => {
+	const fetchOptions = {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(userServiceRequest)
+	};
+
+	return fetch(`${API}/scores`, fetchOptions);
+};
+
 //PUT request for each resource
 export const updateTeam = (userServiceRequest) => {
 	const fetchOptions = {
