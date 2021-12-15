@@ -78,50 +78,63 @@ mainContainer.addEventListener("click", (clickEvent) => {
 
 		//create our array to hold the promises
 		const promiseArray = [];
-
+		// variable used to check total of scores entered per round
+		let totalRoundScore = 0;
+		
 		//update round scores for all shallow score object copy things
 		scoresArray.forEach((score) => {
 			const newScore = parseInt(mainContainer.querySelector(
 				`#roundScore--${score.id}`
 			).value);
 			score[`round${game.currentRound}Score`] = newScore;
+			// add score from each team 
+			totalRoundScore += newScore;
 		});
-		//update our game object shallow copy's round counter
-		game.currentRound++;
 
-		//split off what happens based on what round we are in (finished game)
-		if (game.currentRound > 3) {
-			//game is over
-			game.completed = true;
-            game.dateFinished = Date.now();
-			//put all promises to update score into the array
-			scoresArray.forEach((score) => {
-				//get team that matches each score to update that team's seasonScore property
-				const currentTeam = teams.find(team => team.id === score.teamId);
-				currentTeam.seasonScore += score.round1Score + score.round2Score + score.round3Score;
-				promiseArray.push(updateTeam(currentTeam));
-
-				promiseArray.push(updateScore(score));
-			});
-			//put updated game into promise array
-			promiseArray.push(updateGame(game));
-			//do the promises
-			Promise.all(promiseArray).then(() => {
-				gameState.changeState("activeGameFinished");
-			});
+		// check if sum of the three teams scores are greater than 3
+		if(totalRoundScore > 3) {
+			window.alert("Round score total must not exceed 3.")
 		} else {
-			//game is still going on
-			//put all promises to update score into the array
-			scoresArray.forEach((score) => {
-				promiseArray.push(updateScore(score));
-			});
-			//put updated game into promise array
-			promiseArray.push(updateGame(game));
-			//do the promises
-			Promise.all(promiseArray).then(() => {
-				//now update game state
-				gameState.changeState("activeGameContinue");
-			});
+				//update our game object shallow copy's round counter
+			game.currentRound++;
+
+			//split off what happens based on what round we are in (finished game)
+			if (game.currentRound > 3) {
+				//game is over
+				game.completed = true;
+				game.dateFinished = Date.now();
+				//put all promises to update score into the array
+				scoresArray.forEach((score) => {
+					//get team that matches each score to update that team's seasonScore property
+					const currentTeam = teams.find(team => team.id === score.teamId);
+					currentTeam.seasonScore += score.round1Score + score.round2Score + score.round3Score;
+					promiseArray.push(updateTeam(currentTeam));
+
+					promiseArray.push(updateScore(score));
+				});
+				//put updated game into promise array
+				promiseArray.push(updateGame(game));
+				//do the promises
+				Promise.all(promiseArray).then(() => {
+					gameState.changeState("activeGameFinished");
+				});
+			} else {
+				//game is still going on
+				//put all promises to update score into the array
+				scoresArray.forEach((score) => {
+					promiseArray.push(updateScore(score));
+				});
+				//put updated game into promise array
+				promiseArray.push(updateGame(game));
+				//do the promises
+				Promise.all(promiseArray).then(() => {
+					//now update game state
+					gameState.changeState("activeGameContinue");
+				});
+			}	
+
 		}
+
+		
 	}
 });
