@@ -71,11 +71,7 @@ export const saveTeam = (userServiceRequest) => {
 		body: JSON.stringify(userServiceRequest)
 	};
 
-	return fetch(`${API}/teams`, fetchOptions)
-		.then((response) => response.json())
-		.then(() => {
-			mainContainer.dispatchEvent(new CustomEvent("stateChanged"));
-		});
+	return fetch(`${API}/teams`, fetchOptions);
 };
 
 export const savePlayer = (playerToSave) => {
@@ -87,11 +83,7 @@ export const savePlayer = (playerToSave) => {
 		body: JSON.stringify(playerToSave)
 	};
 
-	return fetch(`${API}/players`, fetchOptions)
-		.then((res) => res.json())
-		.then(() => {
-			mainContainer.dispatchEvent(new CustomEvent("stateChanged"));
-		});
+	return fetch(`${API}/players`, fetchOptions);
 };
 
 export const saveGame = (userServiceRequest) => {

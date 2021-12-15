@@ -12,3 +12,11 @@ export const SeasonScoreBanner = () => {
     html += scrollingText + `</article>`
     return html
 };
+
+//a special event used to update just this module in specific circumstances
+const mainContainer = document.querySelector(".container");
+
+mainContainer.addEventListener("seasonStateChanged", customEvent => {
+    const headerEl = document.querySelector(".header");
+    headerEl.innerHTML = SeasonScoreBanner();
+})
