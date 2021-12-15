@@ -2,7 +2,8 @@ const applicationState = {
 	players: [],
 	teams: [],
 	scores: [],
-	games: []
+	games: [],
+	positions: []
 };
 
 const API = `http://localhost:8088`;
@@ -42,6 +43,14 @@ export const fetchGames = () => {
 		});
 };
 
+export const fetchPositions = () => {
+	return fetch(`${API}/positions`)
+		.then((res) => res.json())
+		.then((positions) => {
+			applicationState.positions = positions;
+		})
+}
+
 //getters for each data collection
 
 export const getPlayers = () => {
@@ -59,6 +68,10 @@ export const getScores = () => {
 export const getGames = () => {
 	return applicationState.games.map((game) => ({ ...game }));
 };
+
+export const getPositions = () => {
+	return applicationState.positions.map((position) => ({...position}));
+}
 
 // POST request for each resource
 
