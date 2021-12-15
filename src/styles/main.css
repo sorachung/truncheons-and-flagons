@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
-@import "./teamsAndResults.css";
-@import "./gameplayArea.css";
+@import "./TeamsAndResultsStyles/teamsAndResults.css";
+@import "./GameplayAreaStyles/gameplayArea.css";
 @import "./seasonScoreBanner.css";
-@import "./ActiveScoreBanner.css";
 
 /* typography */
 body, button, input, select, textarea {
-    color: #404040;
+    color: whitesmoke;
     font-family: "MedievalSharp", cursive, sans-serif;
     font-size: 14px;
     line-height: 1.5;
@@ -21,10 +20,26 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
     margin: 0;
+    background-color: #003314;
+}
+
+header {
+    background-color: #C89721;
 }
 
 /* flexbox structure of main elements */
 .container {
     display: flex;
     flex-flow: column nowrap;
+}
+
+/* general buttons styling */
+
+.button {
+    background-color: brown;
+}
+
+/* some colors for our selects */
+select {
+    color: grey;
 }

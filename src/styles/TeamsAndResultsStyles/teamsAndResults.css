@@ -1,3 +1,11 @@
+@import "./teamList.css";
+@import "./boxScore.css";
+@import "./createTeam.css";
+@import "./joinTeam.css";
+@import "./recentGames.css";
+
+
+
 .teamsAndResults {
     display: flex;
     flex-flow: row wrap;
@@ -9,12 +17,6 @@
     flex: 1;
 }
 
-/* all recent game list css go here */
-
-.recentGameResults {
-    border: red solid 2px;
-    overflow: auto;
-}
 
 /* all team formation css go here */
 .teamFormation {
@@ -32,17 +34,7 @@
     text-align: center;
 }
 
-.joinTeamChunk {
-    flex-basis: 20%;
-    margin: 3% 0;
-}
 
-.incompleteTeamList {
-    overflow: auto;
-}
 
-.joinTeamsList {
-    list-style: none;
-    text-align: left;
-    padding: 0px 5px;
-}
+
+

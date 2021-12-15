@@ -1,7 +1,12 @@
+@import "./ActiveScoreBanner.css";
+
 .gameplayArea {
     display: flex;
     flex-flow: column nowrap;
     border: yellow solid 2px;
+    background-image: url("../../images/wood-background.jpg");
+    background-size: auto;
+    margin: 3%;
 }
 
 .gamePlayAreaChunk {
@@ -16,4 +21,5 @@
 /* game stuff goes here */
 .game {
     border: maroon solid 2px;
+    min-height: 75vh;
 }
