@@ -59,7 +59,7 @@ export const gameState = {
 				);
 			},
 			// for use if the active game ends
-			gameSelectFinished() {
+			activeGameFinished() {
 				this.state = "GameSelect";
 				mainContainer.dispatchEvent(new CustomEvent("stateChanged"));
 			}

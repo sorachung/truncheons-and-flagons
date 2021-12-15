@@ -93,7 +93,7 @@ mainContainer.addEventListener("click", (clickEvent) => {
 			promiseArray.push(updateGame(game));
 			//do the promises
 			Promise.all(promiseArray).then(() => {
-				gameState.changeState("gameSelectFinished");
+				gameState.changeState("activeGameFinished");
 			});
 		} else {
 			//game is still going on
@@ -106,7 +106,7 @@ mainContainer.addEventListener("click", (clickEvent) => {
 			//do the promises
 			Promise.all(promiseArray).then(() => {
 				//now update game state
-				gameState.changeState("gameSelectContinue");
+				gameState.changeState("activeGameContinue");
 			});
 		}
 	}
