@@ -85,7 +85,7 @@ mainContainer.addEventListener("click", (clickEvent) => {
 		if (game.currentRound > 3) {
 			//game is over
 			game.completed = true;
-            game.dateFinished = new Date.now();
+            game.dateFinished = Date.now();
 			//put all promises to update score into the array
 			scoresArray.forEach((score) => {
 				promiseArray.push(updateScore(score));
