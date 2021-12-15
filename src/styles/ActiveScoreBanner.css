@@ -1,11 +1,30 @@
 .activeScoreBoard {
     display: flex;
     overflow: auto;
+    white-space: nowrap;
 }
 
-table, tr, td, th {
+.scoreTitleCard {
     border: black 1px solid;
     padding: 0 1em;
+    font-weight: bold;
+    display: table;
+}
+.scoreTitleCard h3 {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 1em;
+}
+
+
+table {
+    border: black 1px solid;
+    padding: 0 1em;
+}
+
+tr, td, th {
+    padding: 0 1em;
+
 }
 
 table {
