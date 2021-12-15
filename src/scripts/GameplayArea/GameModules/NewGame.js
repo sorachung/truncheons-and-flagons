@@ -134,7 +134,7 @@ mainContainer.addEventListener("click", (clickEvent) => {
 				(score) => score.teamId === teamId
 			);
 			//create an array of game objects that the team is involved in
-			const teamsGames = teamsScores.map((score) =>
+			const teamsGames = teamsScores.map((score) => 
 				games.find((game) => game.id === score.gameId)
 			);
 			teamsGames.forEach((game) => {
@@ -170,10 +170,12 @@ mainContainer.addEventListener("click", (clickEvent) => {
 								saveScore(scoreToSendToAPI)
 							);
 						}
+						// change active game id in game state machine
+						gameState.changeActiveGameId(parseInt(gameIdentifier));
 						return Promise.all(newScoresPromisesArray);
 					})
 					.then(() => {
-						gameState.changeState("gameSelect");
+						gameState.changeState("newGameStart");
 					});
 			} else {
 				window.alert("Please select three different teams");

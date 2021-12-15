@@ -145,19 +145,19 @@
     {
       "id": 1,
       "name": "Hofflewaffles",
-      "seasonScore": 46,
+      "seasonScore": 4,
       "totalPlayers": 3
     },
     {
       "id": 2,
       "name": "Bjorn Identity",
-      "seasonScore": 49,
+      "seasonScore": 3,
       "totalPlayers": 3
     },
     {
       "id": 3,
       "name": "Kool Katz",
-      "seasonScore": 45,
+      "seasonScore": 2,
       "totalPlayers": 3
     },
     {
@@ -174,19 +174,19 @@
     },
     {
       "name": "Yummy Yummy Gummies",
-      "seasonScore": 0,
+      "seasonScore": 3,
       "totalPlayers": 3,
       "id": 6
     },
     {
       "name": "Rancid Raptors",
-      "seasonScore": 0,
+      "seasonScore": 1,
       "totalPlayers": 3,
       "id": 7
     },
     {
       "name": "Potatoes Aren't Real",
-      "seasonScore": 0,
+      "seasonScore": 5,
       "totalPlayers": 3,
       "id": 8
     }
@@ -196,31 +196,31 @@
       "id": 1,
       "gameId": 1,
       "teamId": 1,
-      "round1Score": 15,
-      "round2Score": 21,
-      "round3Score": 10
+      "round1Score": 3,
+      "round2Score": 1,
+      "round3Score": 0
     },
     {
       "id": 2,
       "gameId": 1,
       "teamId": 2,
-      "round1Score": 12,
-      "round2Score": 16,
-      "round3Score": 21
+      "round1Score": 0,
+      "round2Score": 1,
+      "round3Score": 2
     },
     {
       "id": 3,
       "gameId": 1,
       "teamId": 3,
-      "round1Score": 30,
-      "round2Score": 10,
-      "round3Score": 5
+      "round1Score": 0,
+      "round2Score": 1,
+      "round3Score": 1
     },
     {
       "id": 4,
       "gameId": 2,
       "teamId": 1,
-      "round1Score": 25,
+      "round1Score": 3,
       "round2Score": 0,
       "round3Score": 0
     },
@@ -228,7 +228,7 @@
       "id": 5,
       "gameId": 2,
       "teamId": 2,
-      "round1Score": 10,
+      "round1Score": 0,
       "round2Score": 0,
       "round3Score": 0
     },
@@ -236,32 +236,32 @@
       "id": 6,
       "gameId": 2,
       "teamId": 3,
-      "round1Score": 13,
+      "round1Score": 0,
       "round2Score": 0,
       "round3Score": 0
     },
     {
       "gameId": 3,
       "teamId": 8,
-      "round1Score": 5,
-      "round2Score": 5,
-      "round3Score": 6,
+      "round1Score": 1,
+      "round2Score": 2,
+      "round3Score": 2,
       "id": 7
     },
     {
       "gameId": 3,
       "teamId": 7,
-      "round1Score": 3,
-      "round2Score": 2,
-      "round3Score": 4,
+      "round1Score": 1,
+      "round2Score": 0,
+      "round3Score": 0,
       "id": 8
     },
     {
       "gameId": 3,
       "teamId": 6,
-      "round1Score": 2,
-      "round2Score": 7,
-      "round3Score": 2,
+      "round1Score": 1,
+      "round2Score": 1,
+      "round3Score": 1,
       "id": 9
     }
   ],
@@ -280,7 +280,8 @@
     {
       "currentRound": 4,
       "completed": true,
-      "id": 3
+      "id": 3,
+      "dateFinished": 1639581978019
     }
   ]
 }
