@@ -3,6 +3,7 @@ import { JoinTeam } from "./TeamAndResults/TeamStuff/JoinTeam.js";
 import { CreateTeam } from "./TeamAndResults/TeamStuff/CreateTeam.js" 
 import { TeamList } from "./TeamAndResults/TeamStuff/TeamList.js";
 import { Game } from "./GameplayArea/GameModules/Game.js";
+import { ActiveScoreBanner } from "./GameplayArea/ActiveScoreBanner.js";
 
 export const TruncheonsAndFlagons = () => {
     //call ticker function here for header
@@ -27,7 +28,7 @@ export const TruncheonsAndFlagons = () => {
 
         <article class="gameplayArea containerChunk">
             <section class="gameplayAreaChunk activeScoreBoard">
-                Active Game Scores Go Here
+                ${ActiveScoreBanner()}
             </section>
             <section class="gameplayAreaChunk game">
                 ${Game()}

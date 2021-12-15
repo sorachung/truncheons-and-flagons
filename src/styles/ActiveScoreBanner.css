@@ -1,0 +1,17 @@
+.activeScoreBoard {
+    display: flex;
+    overflow: auto;
+}
+
+table, tr, td, th {
+    border: black 1px solid;
+    padding: 0 1em;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.gameCol {
+    border: none;
+}
