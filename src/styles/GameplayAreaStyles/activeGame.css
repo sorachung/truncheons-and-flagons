@@ -1,0 +1,71 @@
+.activeGameChunk {
+    font-size: 3em;
+    text-align: center;
+}
+
+h1.activeGameChunk, h2.activeGameChunk, h3.scoreMenuCardChunk {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* now the score menu cards */
+.scoreMenu {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.scoreMenuCard {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.scoreMenuCardChunk {
+    flex: 1;
+}
+
+.roundScore {
+    max-height: 10%;
+    font-size: 1em;
+    color: whitesmoke;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+}
+
+.roundScore::placeholder {
+    color: #f7b827;
+}
+
+.roundScore:hover {
+    cursor: pointer;
+    background-color: #f7b92796;
+}
+
+.roundScore:hover::placeholder {
+    color: whitesmoke;
+}
+
+.positionImage {
+    max-height: 30%;
+    max-width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pointsList {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+/* buttons at the bottom */
+.activeGameButtons {
+    justify-self: flex-end;
+    margin-top: auto;
+    margin-bottom: 3%;
+}
+
+.activeGameButtons button {
+    font-size: 1em;
+}

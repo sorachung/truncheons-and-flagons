@@ -1,0 +1,42 @@
+@import "./teamList.css";
+@import "./boxScore.css";
+@import "./createTeam.css";
+@import "./joinTeam.css";
+@import "./recentGames.css";
+@import "./TeamRostersList.css";
+
+
+
+.teamsAndResults {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.teamsAndResultsChunk {
+    border: green solid 2px;
+    margin: 5px;
+    flex: 1;
+}
+
+
+/* all team formation css go here */
+.teamFormation {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.teamFormationChunk {
+    border: blue solid 2px;
+    margin: 0px 5px;
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+
+
+
+
+
