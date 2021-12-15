@@ -1,25 +1,24 @@
 @import "./ActiveScoreBanner.css";
+@import "./gameSelect.css";
+@import "./newGame.css";
+@import "./activeGame.css";
+@import "./gameEnd.css";
 
 .gameplayArea {
     display: flex;
     flex-flow: column nowrap;
-    border: yellow solid 2px;
     background-image: url("../../images/wood-background.jpg");
     background-size: auto;
-    margin: 3%;
+    margin: 2%;
 }
 
 .gamePlayAreaChunk {
     margin: 5px 0px;
 }
 
-/* current game scores css go here */
-.activeScoreBoard {
-    border: purple solid 2px;
-}
-
 /* game stuff goes here */
 .game {
-    border: maroon solid 2px;
     min-height: 75vh;
+    display: flex;
+    flex-flow: column nowrap;
 }

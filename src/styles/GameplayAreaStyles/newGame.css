@@ -1,0 +1,50 @@
+.newGameChunk {
+    font-size: 3em;
+    text-align: center;
+}
+
+h2.newGameChunk, h3.newGameChunk {
+    margin-top: 0;
+    margin-bottom: 1%;
+    justify-self: flex-start;
+}
+
+/*  team select menu */
+.teamsMenu {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.teamSelectCard {
+    flex: 1;
+}
+
+.teamSelect {
+    font-size: 0.5em;
+    background-color: transparent;
+    border-radius: 10px;
+    border: solid 3px whitesmoke;
+    color: whitesmoke;
+}
+
+.teamSelect > option {
+    background-color: #603B2A;
+}
+
+.teamRoster {
+    list-style: none;
+}
+
+
+/* buttons at the bottom */
+
+.newGameMenuButtons {
+    justify-self: flex-end;
+    margin-top: auto;
+    margin-bottom: 3%;
+}
+
+.newGameMenuButtons button{
+    font-size: 1em;
+}

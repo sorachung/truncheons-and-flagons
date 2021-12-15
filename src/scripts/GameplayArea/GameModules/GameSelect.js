@@ -10,10 +10,9 @@ export const GameSelect = () => {
     const incompleteGames = games.filter((game) => !game.completed);
 
     // beginning HTML 
-    let html = `<label for="gameSelect">Select a game:</label>
-    <select id="gameSelect" name="gameSelect">
-        <option value="0">Choose your game</option>
-        <option value="newGame">New Game</option>`
+    let html = `<h2 class="gameSelectChunk">Select a game</h2>
+    <section id="gameSelect" class="gameSelectChunk gameSelectMenu">
+        <div class="gameSelectCard" id="gameSelect--newGame">New Game</div>`
 
     // construct each completed game's option html element
     html += incompleteGames.map((game) => {
@@ -42,11 +41,10 @@ export const GameSelect = () => {
             }
         });
 
-        return  `<option value="${game.id}">Game #${game.id}, Round ${game.currentRound}: ` + optionHTML.join(" | ") + `</option>`;
+        return  `<div class="gameSelectCard" id="gameSelect--${game.id}">Game #${game.id}, Round ${game.currentRound}: ` + optionHTML.join(" | ") + `</div>`;
       })
 
-    html += `</select>
-    <button class="button" id="selectGameBtn">Select Game</button>`
+    html += `</section>`
 
     return html
 };
@@ -54,8 +52,8 @@ export const GameSelect = () => {
 const mainContainer = document.querySelector(".container");
 
 mainContainer.addEventListener("click", (event) => {
-    if (event.target.id === "selectGameBtn") {
-        const selectedGameId = mainContainer.querySelector(`select[id="gameSelect"]`).value 
+    if (event.target.id.startsWith("gameSelect--")) {
+        const [,selectedGameId] = event.target.id.split("--")
         if (selectedGameId === "newGame") {
             gameState.changeState('newGame')
         } else {

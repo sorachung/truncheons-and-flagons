@@ -41,8 +41,8 @@ export const GameEnd = () => {
 	});
 
 	//now we make the html with all relevant information collected and sorted
-	let html = `<h1>Final Scores</h1>
-                <section class = "finalScoreMenu">`;
+	let html = `<h1 class="gameEndChunk">Final Scores</h1>
+                <section class = "gameEndChunk finalScoreMenu">`;
 
 	scoresArray.forEach((score) => {
 		html += `<div class="finalScoreMenuCard">`;
@@ -76,7 +76,9 @@ export const GameEnd = () => {
 	});
 	//finish with adding our button and ending the section
 	html += `</section>
-            ${BackToSelectButton()}`;
+			<section class="gameEndChunk gameEndButtons">
+            ${BackToSelectButton()}
+			</section>`;
 
 	return html;
 };

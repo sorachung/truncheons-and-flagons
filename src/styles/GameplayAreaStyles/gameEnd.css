@@ -1,0 +1,51 @@
+.gameEndChunk {
+    font-size: 3em;
+    text-align: center;
+}
+
+h1.gameEndChunk, h3.finalScoreMenuCardChunk {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* score cards */
+.finalScoreMenu {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.finalScoreMenuCard {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.finalScoreMenuCardChunk {
+    flex: 1;
+    justify-content: center;
+    flex-basis: 33%;
+}
+
+/* images go here */
+.crownSpot {
+    width: 30%;
+    height: 30%;
+    margin: 2% auto;
+}
+
+.pointsList {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+/* buttons */
+.gameEndButtons {
+    justify-self: flex-end;
+    margin-top: auto;
+    margin-bottom: 3%;
+}
+
+.gameEndButtons button {
+    font-size: 1em;
+}
