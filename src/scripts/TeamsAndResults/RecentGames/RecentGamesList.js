@@ -14,7 +14,13 @@ export const RecentGamesList = () => {
     }
 
     completedGames.forEach((game) => {
-        html += `<li class="recentGamesListItem" id="recentGamesList--${game.id}">Game #${game.id}: `;
+        html += `<li class="recentGamesListItem" id="recentGamesList--${game.id}">
+        <div class="scoreCard">
+            <table>
+                <thead>
+                    <th colspan=2>Game #${game.id}</th>
+                </thead>
+                <tbody>`;
         
         // array that contains the three teams that participated in a game
         const threeTeamScores = [];
@@ -39,7 +45,12 @@ export const RecentGamesList = () => {
         })
 
         // add each team's score to the html rep
-        html += threeTeamScores.map((team) => `${team.name}: ${team.score}`).join(" | ") + `</li>`
+        html += threeTeamScores.map((team) => {
+            return `<tr>
+                <td>${team.name}</td>
+                <td>${team.score}</td>
+            </tr>`
+        }).join("") + `</tbody></table></div></li>`
     });
 
     html += `</ul>`

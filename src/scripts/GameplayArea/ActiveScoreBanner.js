@@ -51,3 +51,5 @@ export const ActiveScoreBanner = () => {
 
     return html + `</div>`;
 }
+
+
