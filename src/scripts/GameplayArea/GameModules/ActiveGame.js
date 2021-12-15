@@ -22,18 +22,18 @@ export const ActiveGame = () => {
 	//start html
 	let html = `<h1>Round ${game.currentRound}</h1>
         <h2>Enter Scores Below</h2>
-        <section class="scoreInputMenu">`;
+        <section class="scoreMenu">`;
 
 	//make each teams score input card
 	scoresArray.forEach((score) => {
-		html += `<div class="scoreInputMenuCard">
-                    <input type="number" class="roundScore scoreInputMenuCardChunk" id="roundScore--${
+		html += `<div class="scoreMenuCard">
+                    <input type="number" class="roundScore scoreMenuCardChunk" id="roundScore--${
 						score.id
 					}" placeholder="Round ${game.currentRound} Score" />
-                    <h3 class="scoreInputMenuCardChunk">${
+                    <h3 class="scoreMenuCardChunk">${
 						teams.find((team) => team.id === score.teamId).name
 					}</h3>
-                    <ul class="pointsList scoreInputMenuCardChunk">
+                    <ul class="pointsList scoreMenuCardChunk">
                         <li class="pointsListItem">Total: ${
 							score.round1Score +
 							score.round2Score +
@@ -50,8 +50,10 @@ export const ActiveGame = () => {
 
 	//and finish with ending the input menu section and adding submit score and back button
 	html += `</section>
+	<section class="activeGameButtons">
     <button class="button" id="submitScoresButton">Submit Round ${game.currentRound} Scores</button>
-    ${BackToSelectButton()}`;
+    ${BackToSelectButton()}
+	</section>`;
 
 	return html;
 };

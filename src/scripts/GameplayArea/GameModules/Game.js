@@ -1,6 +1,7 @@
 import { ActiveGame } from "./ActiveGame.js";
 import { GameSelect } from "./GameSelect.js";
 import { NewGame } from "./NewGame.js";
+import { GameEnd } from "./GameEnd.js";
 import {
 	fetchGames,
 	fetchPlayers,
@@ -61,8 +62,19 @@ export const gameState = {
 			},
 			// for use if the active game ends
 			activeGameFinished() {
-				this.state = "GameSelect";
+				this.state = "GameEnd";
 				mainContainer.dispatchEvent(new CustomEvent("stateChanged"));
+			}
+		},
+
+		GameEnd: {
+			//going back to the game select menu
+			gameSelect() {
+				this.state = "GameSelect";
+				//this one wiill only change the game area. The final score submission is actually what rerenders everything because the updated final scores are the only things that effect everything else. This is just a nice end game screen that will flip back to the game select screen.
+				mainContainer.dispatchEvent(
+					new CustomEvent("gameStateChanged")
+				);
 			}
 		}
 	},
@@ -96,6 +108,10 @@ export const Game = () => {
 
 		case "ActiveGame":
 			return ActiveGame();
+			break;
+
+		case "GameEnd" :
+			return GameEnd();
 			break;
 
 		default:
