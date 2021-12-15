@@ -22,16 +22,16 @@ export const ActiveGame = () => {
 	const scoresArray = scores.filter((score) => score.gameId === game.id);
 
 	//start html
-	let html = `<h1>Round ${game.currentRound}</h1>
-        <h2>Enter Scores Below</h2>
-        <section class="scoreMenu">`;
+	let html = `<h1 class="activeGameChunk">Round ${game.currentRound}</h1>
+        <h2 class="activeGameChunk">Enter Scores Below</h2>
+        <section class="activeGameChunk scoreMenu">`;
 
 	//make each teams score input card
 	scoresArray.forEach((score) => {
 		html += `<div class="scoreMenuCard">
                     <input type="number" class="roundScore scoreMenuCardChunk" id="roundScore--${
 						score.id
-					}" placeholder="Round ${game.currentRound} Score" />
+					}" placeholder="Click To Enter Score" />
                     <h3 class="scoreMenuCardChunk">${
 						teams.find((team) => team.id === score.teamId).name
 					}</h3>
@@ -53,7 +53,7 @@ export const ActiveGame = () => {
 
 	//and finish with ending the input menu section and adding submit score and back button
 	html += `</section>
-	<section class="activeGameButtons">
+	<section class="activeGameChunk activeGameButtons">
     <button class="button" id="submitScoresButton">Submit Round ${game.currentRound} Scores</button>
     ${BackToSelectButton()}
 	</section>`;
@@ -83,9 +83,12 @@ mainContainer.addEventListener("click", (clickEvent) => {
 		
 		//update round scores for all shallow score object copy things
 		scoresArray.forEach((score) => {
-			const newScore = parseInt(mainContainer.querySelector(
+			let newScore = parseInt(mainContainer.querySelector(
 				`#roundScore--${score.id}`
 			).value);
+			if (!newScore) {
+				newScore = 0;
+			}
 			score[`round${game.currentRound}Score`] = newScore;
 			// add score from each team 
 			totalRoundScore += newScore;

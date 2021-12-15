@@ -1,0 +1,4 @@
+.recentGameResults {
+    border: red solid 2px;
+    overflow: auto;
+}

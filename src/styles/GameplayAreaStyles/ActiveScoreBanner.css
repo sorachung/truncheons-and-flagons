@@ -3,13 +3,14 @@
     flex-direction: row;
     white-space: nowrap;
     overflow: hidden;
-
+    background-color: #c8962167;
 }
 
 .activeScoreBoard__ticker {
     display: flex;
     flex-direction: row;
-    animation: ticker 30s infinite linear;    
+    animation: ticker 60s infinite linear;
+    padding-left: 100%;
 }
 
 .activeScoreBoard:hover {
@@ -44,9 +45,6 @@ table {
 }
 
 @keyframes ticker {
-    0%, 5% {
-        transform: translateX(0);
-    }
     100% {
         transform: translateX(-105%);
     }

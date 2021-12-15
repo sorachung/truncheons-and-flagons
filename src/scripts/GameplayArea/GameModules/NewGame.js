@@ -14,9 +14,9 @@ import { BackToSelectButton } from "./BackToSelectButton.js";
 export const NewGame = () => {
 	const teams = getTeams();
 	return `
-        <h2>New Game</h2>
-        <h3>Select Teams</h3>
-        <section class="teamsMenu">
+        <h2 class="newGameChunk">New Game</h2>
+        <h3 class="newGameChunk">Select Teams</h3>
+        <section class="teamsMenu newGameChunk">
             <div class="teamSelectCard" id="teamOne">
                 <select class="teamSelect" id="teamSelect--1">
                     <option value="">Choose A Team</option>
@@ -62,8 +62,10 @@ export const NewGame = () => {
                 </ul>
             </div>
         </section>
+		<section class="newGameMenuButtons newGameChunk">
         <button class="button startGameButton" id="startGameButton">Start Game</button>
 		${BackToSelectButton()}
+		</section>
         `;
 };
 

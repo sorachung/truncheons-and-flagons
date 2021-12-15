@@ -1,0 +1,24 @@
+@import "./ActiveScoreBanner.css";
+@import "./gameSelect.css";
+@import "./newGame.css";
+@import "./activeGame.css";
+@import "./gameEnd.css";
+
+.gameplayArea {
+    display: flex;
+    flex-flow: column nowrap;
+    background-image: url("../../images/wood-background.jpg");
+    background-size: auto;
+    margin: 2%;
+}
+
+.gamePlayAreaChunk {
+    margin: 5px 0px;
+}
+
+/* game stuff goes here */
+.game {
+    min-height: 75vh;
+    display: flex;
+    flex-flow: column nowrap;
+}
