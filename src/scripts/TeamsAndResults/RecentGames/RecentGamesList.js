@@ -1,10 +1,11 @@
-import { getGames, getScores, getTeams } from "../dataAccess.js";
+import { getGames, getScores, getTeams } from "../../dataAccess.js";
+import { recentGamesState } from "./RecentGames.js";
 
 export const RecentGamesList = () => {
     const games = getGames();
     const scores = getScores();
     const teams = getTeams();
-    let html = "<h2>Recent Game Results</h2><ul>";
+    let html = '<h2>Recent Game Results</h2><ul class="recentGamesList">';
     
     // find only completed games to display and only the last 15
     const completedGames = games.filter((game) => game.completed)
@@ -13,7 +14,7 @@ export const RecentGamesList = () => {
     }
 
     completedGames.forEach((game) => {
-        html += `<li>Game #${game.id}: `;
+        html += `<li class="recentGamesListItem" id="recentGamesList--${game.id}">Game #${game.id}: `;
         
         // array that contains the three teams that participated in a game
         const threeTeamScores = [];
@@ -45,3 +46,15 @@ export const RecentGamesList = () => {
 
     return html;
 };
+
+//grab container
+const mainContainer = document.querySelector(".container");
+
+//add our event listener for when we click one of the games
+mainContainer.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("recentGamesList--")) {
+        const [,gameId] = clickEvent.target.id.split("--");
+        recentGamesState.changeBoxScoreGameId(parseInt(gameId));
+        recentGamesState.changeState('boxScore');
+    }
+})

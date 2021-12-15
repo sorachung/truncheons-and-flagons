@@ -1,4 +1,4 @@
-import { RecentGamesList } from "./RecentGamesList.js"
+import { RecentGames } from "./RecentGames/RecentGames.js";
 import { JoinTeam } from "./TeamStuff/JoinTeam.js";
 import { CreateTeam } from "./TeamStuff/CreateTeam.js" 
 import { TeamList } from "./TeamStuff/TeamList.js";
@@ -19,7 +19,7 @@ export const TeamsAndResults = () => {
         </div>
     </section>
     <section class="recentGameResults teamsAndResultsChunk">
-            ${RecentGamesList()}
+            ${RecentGames()}
     </section>`
 }
 
