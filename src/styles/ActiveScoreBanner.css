@@ -1,0 +1,53 @@
+.activeScoreBoard {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+
+.activeScoreBoard__ticker {
+    display: flex;
+    flex-direction: row;
+    animation: ticker 30s infinite linear;    
+}
+
+.activeScoreBoard:hover {
+    animation-play-state: paused;
+}
+
+.scoreTitleCard {
+    border: black 1px solid;
+    padding: 0 1em;
+    font-weight: bold;
+    display: table;
+}
+.scoreTitleCard h3 {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 1em;
+}
+
+
+table {
+    border: black 1px solid;
+    padding: 0 1em;
+}
+
+tr, td, th {
+    padding: 0 1em;
+
+}
+
+table {
+    border-collapse: collapse;
+}
+
+@keyframes ticker {
+    0%, 5% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-105%);
+    }
+}

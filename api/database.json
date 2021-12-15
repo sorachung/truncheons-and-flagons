@@ -263,6 +263,30 @@
       "round2Score": 1,
       "round3Score": 1,
       "id": 9
+    },
+    {
+      "gameId": 4,
+      "teamId": 6,
+      "round1Score": 0,
+      "round2Score": 0,
+      "round3Score": 0,
+      "id": 10
+    },
+    {
+      "gameId": 4,
+      "teamId": 7,
+      "round1Score": 0,
+      "round2Score": 0,
+      "round3Score": 0,
+      "id": 11
+    },
+    {
+      "gameId": 4,
+      "teamId": 8,
+      "round1Score": 0,
+      "round2Score": 0,
+      "round3Score": 0,
+      "id": 12
     }
   ],
   "games": [

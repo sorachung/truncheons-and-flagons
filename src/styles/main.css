@@ -2,6 +2,7 @@
 @import "./teamsAndResults.css";
 @import "./gameplayArea.css";
 @import "./seasonScoreBanner.css";
+@import "./ActiveScoreBanner.css";
 
 /* typography */
 body, button, input, select, textarea {

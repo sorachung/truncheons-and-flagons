@@ -8,6 +8,7 @@ import {
 	fetchScores,
 	fetchTeams
 } from "../../dataAccess.js";
+import { ActiveScoreBanner } from "../ActiveScoreBanner.js";
 
 //grab the main container
 const mainContainer = document.querySelector(".container");
@@ -147,7 +148,7 @@ mainContainer.addEventListener("gameplayAreaStateChanged", (customEvent) => {
 	]).then(() => {
 		const bannerEl = document.querySelector(".activeScoreBoard");
 		//HERE we will call the ActiveGameBannerFunction once it is made
-		bannerEl.innerHTML = "Active Game Scores Go Here";
+		bannerEl.innerHTML = ActiveScoreBanner();
 		const gameEl = document.querySelector(".game");
 		gameEl.innerHTML = Game();
 	});

@@ -7,7 +7,7 @@ export const GameSelect = () => {
     const teams = getTeams();
 
     // filter to get array of only game objs in progress
-    const completedGames = games.filter((game) => !game.completed);
+    const incompleteGames = games.filter((game) => !game.completed);
 
     // beginning HTML 
     let html = `<label for="gameSelect">Select a game:</label>
@@ -16,7 +16,7 @@ export const GameSelect = () => {
         <option value="newGame">New Game</option>`
 
     // construct each completed game's option html element
-    html += completedGames.map((game) => {
+    html += incompleteGames.map((game) => {
         // find corresponding score objs to each game
         const foundScores = scores.filter(
             (score) => score.gameId === game.id
