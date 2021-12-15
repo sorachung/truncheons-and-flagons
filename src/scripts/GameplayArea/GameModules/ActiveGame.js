@@ -3,7 +3,8 @@ import {
 	getScores,
 	getTeams,
 	updateScore,
-	updateGame
+	updateGame,
+	updateTeam
 } from "../../dataAccess.js";
 import { gameState } from "./Game.js";
 import { BackToSelectButton } from "./BackToSelectButton.js";
@@ -64,9 +65,11 @@ mainContainer.addEventListener("click", (clickEvent) => {
 		// collect relevant objects
 		const scores = getScores();
 		const games = getGames();
+		const teams = getTeams();
 
 		const game = games.find((gam) => gam.id === gameState.activeGameId);
 		const scoresArray = scores.filter((score) => score.gameId === game.id);
+		
 
 		//create our array to hold the promises
 		const promiseArray = [];
@@ -88,6 +91,11 @@ mainContainer.addEventListener("click", (clickEvent) => {
             game.dateFinished = Date.now();
 			//put all promises to update score into the array
 			scoresArray.forEach((score) => {
+				//get team that matches each score to update that team's seasonScore property
+				const currentTeam = teams.find(team => team.id === score.teamId);
+				currentTeam.seasonScore += score.round1Score + score.round2Score + score.round3Score;
+				promiseArray.push(updateTeam(currentTeam));
+
 				promiseArray.push(updateScore(score));
 			});
 			//put updated game into promise array

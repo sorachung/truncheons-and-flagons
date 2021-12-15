@@ -128,11 +128,7 @@ export const updateTeam = (userServiceRequest) => {
     body: JSON.stringify(userServiceRequest)
 	};
 
-  return fetch(`${API}/teams/${userServiceRequest.id}`, fetchOptions)
-    .then((res) => res.json())
-    .then(() => {
-        mainContainer.dispatchEvent(new CustomEvent("stateChanged"));
-    });
+  return fetch(`${API}/teams/${userServiceRequest.id}`, fetchOptions);
 };
 
 export const updateGame = (userServiceRequest) => {
