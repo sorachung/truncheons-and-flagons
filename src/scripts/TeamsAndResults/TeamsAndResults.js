@@ -3,6 +3,7 @@ import { JoinTeam } from "./TeamStuff/JoinTeam.js";
 import { CreateTeam } from "./TeamStuff/CreateTeam.js" 
 import { TeamList } from "./TeamStuff/TeamList.js";
 import { fetchPlayers, fetchTeams } from "../dataAccess.js";
+import { TeamRostersList } from "./TeamStuff/TeamRostersList.js";
 
 export const TeamsAndResults = () => {
 
@@ -16,6 +17,9 @@ export const TeamsAndResults = () => {
         </div>
         <div class="teamFormationChunk incompleteTeamList">
             ${TeamList()}
+        </div>
+        <div class="teamFormationChunk teamRostersList">
+            ${TeamRostersList()}
         </div>
     </section>
     <section class="recentGameResults teamsAndResultsChunk">
