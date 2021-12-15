@@ -40,7 +40,14 @@ export const gameState = {
 				mainContainer.dispatchEvent(
 					new CustomEvent("gameplayAreaStateChanged")
 				);
+			},
+			newGameStart() {
+				this.state = "ActiveGame";
+				mainContainer.dispatchEvent(
+					new CustomEvent("gameplayAreaStateChanged")
+				);
 			}
+
 		},
 
 		ActiveGame: {

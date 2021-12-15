@@ -115,7 +115,7 @@ mainContainer.addEventListener("click", (clickEvent) => {
 			//do the promises
 			Promise.all(promiseArray).then(() => {
 				//now update game state
-				gameState.changeState("activeGameContinue");
+				gameState.changeState("continueGame");
 			});
 		}
 	}
