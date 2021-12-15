@@ -198,7 +198,10 @@
       "teamId": 1,
       "round1Score": 3,
       "round2Score": 1,
-      "round3Score": 0
+      "round3Score": 0,
+      "round1PositionId": 1,
+      "round2PositionId": 2,
+      "round3PositionId": 3
     },
     {
       "id": 2,
@@ -206,7 +209,10 @@
       "teamId": 2,
       "round1Score": 0,
       "round2Score": 1,
-      "round3Score": 2
+      "round3Score": 2,
+      "round1PositionId": 2,
+      "round2PositionId": 3,
+      "round3PositionId": 1
     },
     {
       "id": 3,
@@ -214,7 +220,10 @@
       "teamId": 3,
       "round1Score": 0,
       "round2Score": 1,
-      "round3Score": 1
+      "round3Score": 1,
+      "round1PositionId": 3,
+      "round2PositionId": 1,
+      "round3PositionId": 2
     },
     {
       "id": 4,
@@ -222,7 +231,10 @@
       "teamId": 1,
       "round1Score": 3,
       "round2Score": 0,
-      "round3Score": 0
+      "round3Score": 0,
+      "round1PositionId": 1,
+      "round2PositionId": 2,
+      "round3PositionId": 3
     },
     {
       "id": 5,
@@ -230,7 +242,10 @@
       "teamId": 2,
       "round1Score": 0,
       "round2Score": 0,
-      "round3Score": 0
+      "round3Score": 0,
+      "round1PositionId": 3,
+      "round2PositionId": 1,
+      "round3PositionId": 2
     },
     {
       "id": 6,
@@ -238,7 +253,10 @@
       "teamId": 3,
       "round1Score": 0,
       "round2Score": 0,
-      "round3Score": 0
+      "round3Score": 0,
+      "round1PositionId": 2,
+      "round2PositionId": 3,
+      "round3PositionId": 1
     },
     {
       "gameId": 3,
@@ -246,7 +264,10 @@
       "round1Score": 1,
       "round2Score": 2,
       "round3Score": 2,
-      "id": 7
+      "id": 7,
+      "round1PositionId": 1,
+      "round2PositionId": 2,
+      "round3PositionId": 3
     },
     {
       "gameId": 3,
@@ -254,7 +275,10 @@
       "round1Score": 1,
       "round2Score": 0,
       "round3Score": 0,
-      "id": 8
+      "id": 8,
+      "round1PositionId": 3,
+      "round2PositionId": 1,
+      "round3PositionId": 2
     },
     {
       "gameId": 3,
@@ -262,7 +286,10 @@
       "round1Score": 1,
       "round2Score": 1,
       "round3Score": 1,
-      "id": 9
+      "id": 9,
+      "round1PositionId": 2,
+      "round2PositionId": 3,
+      "round3PositionId": 1
     },
     {
       "gameId": 4,
@@ -270,7 +297,10 @@
       "round1Score": 0,
       "round2Score": 0,
       "round3Score": 0,
-      "id": 10
+      "id": 10,
+      "round1PositionId": 1,
+      "round2PositionId": 2,
+      "round3PositionId": 3
     },
     {
       "gameId": 4,
@@ -278,7 +308,10 @@
       "round1Score": 0,
       "round2Score": 0,
       "round3Score": 0,
-      "id": 11
+      "id": 11,
+      "round1PositionId": 2,
+      "round2PositionId": 3,
+      "round3PositionId": 1
     },
     {
       "gameId": 4,
@@ -286,7 +319,10 @@
       "round1Score": 0,
       "round2Score": 0,
       "round3Score": 0,
-      "id": 12
+      "id": 12,
+      "round1PositionId": 3,
+      "round2PositionId": 1,
+      "round3PositionId": 2
     }
   ],
   "games": [
@@ -306,6 +342,29 @@
       "completed": true,
       "id": 3,
       "dateFinished": 1639581978019
+    },
+    {
+      "currentRound": 4,
+      "completed": true,
+      "id": 4,
+      "dateFinished": 1639599971
+    }
+  ],
+  "positions": [
+    {
+      "id": 1,
+      "position": "Knights",
+      "imageLink": "./images/PositionImages/knights.png"
+    },
+    {
+      "id": 2,
+      "position": "Goblins",
+      "imageLink": "./images/PositionImages/goblins.png"
+    },
+    {
+      "id": 3,
+      "position": "Fairies",
+      "imageLink": "./images/PositionImages/fairies.png"
     }
   ]
 }

@@ -3,6 +3,7 @@ import {
 	getGames,
 	getScores,
 	getPlayers,
+	getPositions,
 	saveGame,
 	saveScore
 } from "../../dataAccess.js";
@@ -157,18 +158,41 @@ mainContainer.addEventListener("click", (clickEvent) => {
 					.then((newGameFromAPI) => {
 						const gameIdentifier = newGameFromAPI.id;
 						const newScoresPromisesArray = [];
+						//take care of position assignments
+						const positions = getPositions();
+						//make a random order of our shallow copy of positions using the fisher yates method
+						for (let i = positions.length -1; i > 0; i--) {
+							const j = Math.floor(Math.random() * i);
+							const temp = positions[i];
+							positions[i] = positions[j];
+							positions[j] = temp;
+						}
+						//a counter to work our way through the positions array in the following for loop
+						let positionsIndexCounter = 0;
+
 						for (const teamIdentifier of teamIds) {
 							const scoreToSendToAPI = {
 								gameId: gameIdentifier,
 								teamId: teamIdentifier,
 								round1Score: 0,
 								round2Score: 0,
-								round3Score: 0
+								round3Score: 0,
 							};
+							
+							//loop through and put in the positin ids in order
+							for (let i = 0; i < positions.length; i++) {
+								let positionsIndex = positionsIndexCounter + i;
+								if (positionsIndex > positions.length - 1) {
+									positionsIndex -= positions.length;
+								}
+								scoreToSendToAPI[`round${i+1}PositionId`] = positions[positionsIndex].id;
+							}
 
 							newScoresPromisesArray.push(
 								saveScore(scoreToSendToAPI)
 							);
+
+							positionsIndexCounter++;
 						}
 						// change active game id in game state machine
 						gameState.changeActiveGameId(parseInt(gameIdentifier));

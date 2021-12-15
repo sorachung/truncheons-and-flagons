@@ -2,6 +2,7 @@ import {
 	getGames,
 	getScores,
 	getTeams,
+	getPositions,
 	updateScore,
 	updateGame,
 	updateTeam
@@ -13,6 +14,7 @@ export const ActiveGame = () => {
 	const scores = getScores();
 	const games = getGames();
 	const teams = getTeams();
+	const positions = getPositions();
 
 	//get the correct game
 	const game = games.find((gam) => gam.id === gameState.activeGameId);
@@ -33,6 +35,7 @@ export const ActiveGame = () => {
                     <h3 class="scoreMenuCardChunk">${
 						teams.find((team) => team.id === score.teamId).name
 					}</h3>
+					<img class="scoreMenuCardChunk positionImage" src="${positions.find(pos => pos.id === score[`round${game.currentRound}PositionId`]).imageLink}" alt="ADD TEXT HERE" />
                     <ul class="pointsList scoreMenuCardChunk">
                         <li class="pointsListItem">Total: ${
 							score.round1Score +
