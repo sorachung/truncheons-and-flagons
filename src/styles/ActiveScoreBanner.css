@@ -1,7 +1,19 @@
 .activeScoreBoard {
     display: flex;
-    overflow: auto;
+    flex-direction: row;
     white-space: nowrap;
+    overflow: hidden;
+
+}
+
+.activeScoreBoard__ticker {
+    display: flex;
+    flex-direction: row;
+    animation: ticker 30s infinite linear;    
+}
+
+.activeScoreBoard:hover {
+    animation-play-state: paused;
 }
 
 .scoreTitleCard {
@@ -31,6 +43,11 @@ table {
     border-collapse: collapse;
 }
 
-.gameCol {
-    border: none;
+@keyframes ticker {
+    0%, 5% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-105%);
+    }
 }
