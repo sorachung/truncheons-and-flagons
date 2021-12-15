@@ -11,7 +11,8 @@
 .ticker {
     display: flex;
     flex-direction: row;
-    animation: ticker 15s infinite linear;
+    padding-left: 100%;
+    animation: ticker 30s infinite linear;
 }
 
 .ticker:hover {
@@ -19,9 +20,6 @@
 }
 
 @keyframes ticker {
-    0% {
-        transform:translateX(0);
-    }
     100% {
         transform: translateX(-100%);
     }
