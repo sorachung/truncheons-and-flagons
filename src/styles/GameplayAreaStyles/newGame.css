@@ -36,6 +36,17 @@ h2.newGameChunk, h3.newGameChunk {
     list-style: none;
 }
 
+.rosterListItemPlayer {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: whitesmoke;
+    text-shadow: -2px 2px brown, 0 0 10px #C89721;
+}
+
+.rosterListItemCountry {
+    color: #f7b827;
+}
+
 
 /* buttons at the bottom */
 

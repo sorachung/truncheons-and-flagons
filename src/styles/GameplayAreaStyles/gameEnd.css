@@ -8,6 +8,10 @@ h1.gameEndChunk, h3.finalScoreMenuCardChunk {
     margin-bottom: auto;
 }
 
+h3.finalScoreMenuCardChunk {
+    text-shadow: -2px 2px brown, 0 0 10px #C89721;
+}
+
 /* score cards */
 .finalScoreMenu {
     display: flex;

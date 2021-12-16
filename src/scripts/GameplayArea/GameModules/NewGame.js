@@ -95,7 +95,8 @@ mainContainer.addEventListener("change", (changeEvent) => {
 		rosterListEl.innerHTML = players
 			.map((player) => {
 				if (player.teamId === selectedTeamId) {
-					return `<li class="rosterListItem">${player.firstName} ${player.lastName}</li>`;
+					return `<li class="rosterListItem"><div class="rosterListItemPlayer">${player.firstName} ${player.lastName}</div>
+														<div class="rosterListItemCountry">Hails from ${player.country}</div></li>`;
 				}
 			})
 			.join("");
