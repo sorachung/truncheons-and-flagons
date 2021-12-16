@@ -13,6 +13,11 @@ export const RecentGamesList = () => {
         completedGames.sort((game1, game2) => game1.dateFinished - game2.dateFinished)
     }
 
+    if (completedGames.length > 10) {
+        completedGames.splice(0, 9)
+    }
+    
+
     completedGames.forEach((game) => {
         html += `<li class="recentGamesListItem" id="recentGamesList--${game.id}">
             <table class="scorecard"id="recentGamesList--${game.id}">

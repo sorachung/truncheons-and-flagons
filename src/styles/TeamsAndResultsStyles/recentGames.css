@@ -13,14 +13,17 @@
 .recentGamesList {
     list-style: none;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: flex-start;
-    padding: 0;
+    padding: 0 0 0.5em 0;
+    overflow: auto;
 }
 
 .recentGamesListItem {
-    min-width: 10%;
+    min-width: fit-content;
     position: relative;
+    white-space: nowrap;
+    padding: 0 1em;
 }
 
 .recentGamesListItem {

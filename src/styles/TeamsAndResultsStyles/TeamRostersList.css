@@ -37,5 +37,5 @@ div.show {
 
 .teamRostersListItem:hover .teamRosterPlayers {
     /* cancel out the increase when hovered above */
-    font-size: 0.5em;
+    font-size: 0.75em;
 }
