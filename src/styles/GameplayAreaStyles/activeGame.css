@@ -8,6 +8,10 @@ h1.activeGameChunk, h2.activeGameChunk, h3.scoreMenuCardChunk {
     margin-bottom: auto;
 }
 
+h3.scoreMenuCardChunk {
+    text-shadow: -2px 2px brown, 0 0 10px #C89721;
+}
+
 /* now the score menu cards */
 .scoreMenu {
     display: flex;

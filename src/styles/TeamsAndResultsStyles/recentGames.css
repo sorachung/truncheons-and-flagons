@@ -7,12 +7,13 @@
 .recentGamesHeader {
     text-align: center;
     font-size: 2em;
+    margin: 0;
 }
 
 .recentGamesList {
     list-style: none;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: flex-start;
     padding: 0;
 }
@@ -24,8 +25,12 @@
     padding: 0 1em;
 }
 
-.recentGamesListItem + .recentGamesListItem {
+.recentGamesListItem {
     border-left: 2px solid #C89721;
+}
+
+.recentGamesListItem:last-child {
+    border-right: 2px solid #C89721;
 }
 
 .scorecard {

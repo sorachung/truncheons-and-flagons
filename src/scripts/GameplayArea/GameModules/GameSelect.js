@@ -10,7 +10,7 @@ export const GameSelect = () => {
     const incompleteGames = games.filter((game) => !game.completed);
 
     // beginning HTML 
-    let html = `<h2 class="gameSelectChunk">Select a game</h2>
+    let html = `<h2 class="gameSelectChunk">Select An Option</h2>
     <section id="gameSelect" class="gameSelectChunk gameSelectMenu">
         <div class="gameSelectCard" id="gameSelect--newGame">New Game</div>`
 

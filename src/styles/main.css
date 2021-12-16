@@ -22,6 +22,9 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     font-weight: bold;
     color: brown;
+    text-shadow: 0 0 5px #C89721;
+    font-size: 4em;
+    margin-bottom: 10px;
 }
 
 /* overall styling */
@@ -55,4 +58,21 @@ select {
 select:hover {
     cursor: pointer;
     background-color: rgba(165, 42, 42, 0.7);
+}
+
+/* footer styling */
+.footer {
+    color: rgba(128, 128, 128, 0.61);
+    margin: 0;
+}
+
+.footerCredits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footerCredits li {
+    display: inline-block;
+    margin: 0px 1%;
 }
