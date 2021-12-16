@@ -17,7 +17,7 @@
     display: inline-block;
     white-space: nowrap;
     padding-right: 100%;
-    animation: ticker 30s infinite linear;
+    animation: ticker 45s infinite linear;
 }
 
 .ticker:hover {
