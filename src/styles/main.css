@@ -3,6 +3,7 @@
 @import "./GameplayAreaStyles/gameplayArea.css";
 @import "./seasonScoreBanner.css";
 
+
 /* typography */
 body, button, input, select, textarea {
     color: whitesmoke;
@@ -16,15 +17,18 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 2px;
 }
 
+/* title header */
+.titleHeader {
+    text-align: center;
+    font-weight: bold;
+    color: brown;
+}
+
 /* overall styling */
 
 body {
     margin: 0;
     background-color: #003314;
-}
-
-header {
-    background-color: #C89721;
 }
 
 /* flexbox structure of main elements */
@@ -39,7 +43,16 @@ header {
     background-color: brown;
 }
 
+.button:hover {
+    cursor:pointer;
+}
+
 /* some colors for our selects */
 select {
     color: grey;
+}
+
+select:hover {
+    cursor: pointer;
+    background-color: rgba(165, 42, 42, 0.7);
 }

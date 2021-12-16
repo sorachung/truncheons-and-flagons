@@ -1,10 +1,59 @@
-.joinTeamChunk {
-    flex-basis: 20%;
-    margin: 3% 0;
+.joinTeam {
+    display: flex;
+    flex-flow: column nowrap;
 }
 
-.joinTeamsList {
-    list-style: none;
-    text-align: left;
-    padding: 0px 5px;
+.joinTeamChunk {
+    flex: 1;
+    margin: 0;
+    min-height: 1em;
+    max-height: 25%;
+}
+
+div.joinTeamChunk {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+input.joinTeamChunk {
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 10px;
+}
+
+input.joinTeamChunk::placeholder {
+    color: rgba(245, 245, 245, 0.70);;
+}
+
+input.joinTeamChunk:hover {
+    cursor: pointer;
+    background-color: rgba(165, 42, 42, 0.7);
+}
+
+input.joinTeamChunk:focus {
+    border: solid 2px whitesmoke;
+    outline: none;
+}
+
+.teamsToJoin {
+    background-color: transparent;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    color: rgba(245, 245, 245, 0.70);
+}
+
+.teamsToJoin:focus {
+    border: solid whitesmoke 2px;
+}
+
+.teamsToJoinItem {
+    background-color: rgba(112, 27, 27, 0.7);
+    color: whitesmoke;
+}
+
+.joinTeam > .button {
+    max-height: 20%;
+    max-width: 75%;
+    align-self: center;
+    margin-bottom: 1%;
 }

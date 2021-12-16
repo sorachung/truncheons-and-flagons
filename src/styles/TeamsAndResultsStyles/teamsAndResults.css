@@ -9,30 +9,36 @@
 
 .teamsAndResults {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column-reverse nowrap;
 }
 
 .teamsAndResultsChunk {
-    border: green solid 2px;
     margin: 5px;
-    flex: 1;
 }
 
+.recentGameResults {
+    flex: 1;
+}
 
 /* all team formation css go here */
 .teamFormation {
+    flex: 1;
     display: flex;
     flex-flow: row wrap;
+    justify-content: flex-start;
+    border: solid 5px #C89721;
+    border-radius: 10px;
 }
 
 .teamFormationChunk {
-    border: blue solid 2px;
-    margin: 0px 5px;
+    margin: 0px;
     flex: 1;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-evenly;
     text-align: center;
+    min-height: 250px;
+    max-height: 250px;
+    min-width: 250px;
+    overflow-y: auto;
+    border: solid 2px #C89721;
 }
 
 

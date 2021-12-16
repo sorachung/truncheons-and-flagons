@@ -5,7 +5,7 @@ export const RecentGamesList = () => {
     const games = getGames();
     const scores = getScores();
     const teams = getTeams();
-    let html = '<h2>Recent Game Results</h2><ul class="recentGamesList">';
+    let html = '<h2 class="recentGamesHeader">Recent Game Results</h2><ul class="recentGamesList">';
     
     // find only completed games to display and only the last 15
     const completedGames = games.filter((game) => game.completed)
@@ -15,12 +15,11 @@ export const RecentGamesList = () => {
 
     completedGames.forEach((game) => {
         html += `<li class="recentGamesListItem" id="recentGamesList--${game.id}">
-        <div class="scoreCard">
-            <table>
-                <thead>
+            <table class="scorecard"id="recentGamesList--${game.id}">
+                <thead id="recentGamesList--${game.id}">
                     <th colspan=2>Game #${game.id}</th>
                 </thead>
-                <tbody>`;
+                <tbody id="recentGamesList--${game.id}">`;
         
         // array that contains the three teams that participated in a game
         const threeTeamScores = [];
@@ -47,10 +46,10 @@ export const RecentGamesList = () => {
         // add each team's score to the html rep
         html += threeTeamScores.map((team) => {
             return `<tr>
-                <td>${team.name}</td>
-                <td>${team.score}</td>
+                <td id="recentGamesList--${game.id}">${team.name}</td>
+                <td id="recentGamesList--${game.id}">${team.score}</td>
             </tr>`
-        }).join("") + `</tbody></table></div></li>`
+        }).join("") + `</tbody></table></li>`
     });
 
     html += `</ul>`

@@ -1,15 +1,8 @@
-.joinTeamsList {
-    list-style: none;
-    text-align: left;
-    padding: 0px 5px;
+div.teamRostersListHeader {
+    font-size: 2em;
+    text-align: center;
 }
-
-/* Team Rosters List  */
-
-.teamRostersList {
-    overflow: hidden;
-}
-
+/* roster pop up css */
 div.show {
     display: list-item;
 }
@@ -18,6 +11,31 @@ div.show {
     display: none;
 }
 
+/* normal css */
+
 .teamRostersListItem {
     list-style-type: none;
+}
+
+.teamRostersListItem:hover {
+    background-color: rgba(165, 42, 42, 0.7);
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.teamRostersListUl {
+    padding: 0;
+    margin-left: 3px;
+    text-align: left;
+}
+
+.teamRosterPlayers {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+.teamRostersListItem:hover .teamRosterPlayers {
+    /* cancel out the increase when hovered above */
+    font-size: 0.5em;
 }

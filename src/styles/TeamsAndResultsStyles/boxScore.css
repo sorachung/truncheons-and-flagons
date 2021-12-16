@@ -1,0 +1,53 @@
+.boxScoreHeader {
+    text-align: center;
+    font-size: 2em;
+}
+
+/* score cards */
+.boxScore {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.boxScoreCard {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.boxScoreCardChunk {
+    flex: 1;
+    justify-content: center;
+    flex-basis: 33%;
+    text-align: center;
+}
+
+h3.boxScoreCardChunk {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1.5em;
+}
+
+/* images */
+.crownSpotBox {
+    width: 30%;
+    height: 30%;
+    margin: 2% auto;
+}
+
+.pointsListBox {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+/*  button */
+button.boxScoreButton {
+    justify-self: flex-end;
+    margin-top: auto;
+    margin-bottom: 3%;
+    font-size: 1.5em;
+    min-width: 20%;
+    align-self: center;
+}
+    

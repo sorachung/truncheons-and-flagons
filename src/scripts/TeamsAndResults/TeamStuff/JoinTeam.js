@@ -5,16 +5,17 @@ const mainContainer = document.querySelector(".container");
 export const JoinTeam = () => {
 	const teams = getTeams();
 	return `
+		<div class="joinTeamChunk">Join a Team</div>
         <input type="text" class="firstName joinTeamChunk" id="firstName" placeholder="Enter your first name..."></input>
         <input type="text" class="lastName joinTeamChunk" id="lastName" placeholder="Enter your last name..."></input>
         <input type="text" class="country joinTeamChunk" id="country" placeholder="Enter your country of origin..."></input>
         <select class="teamsToJoin joinTeamChunk" id="teamsToJoin">
-            <option value="">Choose a team to join</option>
+            <option class="teamsToJoinItem" value="">Choose a team to join</option>
             ${teams
 				.map((team) => {
 					//only show teams that need members
 					if (team.totalPlayers < 3) {
-						return `<option value="${team.id}">${team.name}</option>`;
+						return `<option class="teamsToJoinItem" value="${team.id}">${team.name}</option>`;
 					}
 				})
 				.join("")}

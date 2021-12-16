@@ -2,8 +2,8 @@ import { getTeams } from "../../dataAccess.js";
 
 export const TeamList = () => {
 	const teams = getTeams();
-	let html = `Teams In Need Of Players
-                <ul class="joinTeamsList">`;
+	let html = `<div class="teamListChunk">Incomplete Rosters</div>
+                <ul class="joinTeamsList teamListChunk">`;
 	html += teams
 		.map((team) => {
 			if (team.totalPlayers < 3) {
