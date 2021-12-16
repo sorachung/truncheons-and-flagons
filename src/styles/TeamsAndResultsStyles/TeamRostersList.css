@@ -1,0 +1,23 @@
+.joinTeamsList {
+    list-style: none;
+    text-align: left;
+    padding: 0px 5px;
+}
+
+/* Team Rosters List  */
+
+.teamRostersList {
+    overflow: hidden;
+}
+
+div.show {
+    display: list-item;
+}
+
+.teamRosterPopUp {
+    display: none;
+}
+
+.teamRostersListItem {
+    list-style-type: none;
+}

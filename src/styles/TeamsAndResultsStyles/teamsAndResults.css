@@ -3,6 +3,7 @@
 @import "./createTeam.css";
 @import "./joinTeam.css";
 @import "./recentGames.css";
+@import "./TeamRostersList.css";
 
 
 
@@ -33,6 +34,7 @@
     justify-content: space-evenly;
     text-align: center;
 }
+
 
 
 
