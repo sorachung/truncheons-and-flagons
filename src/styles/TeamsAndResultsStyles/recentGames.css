@@ -15,7 +15,8 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    padding: 0;
+    padding: 0 0 0.5em 0;
+    overflow: auto;
 }
 
 .recentGamesListItem {
