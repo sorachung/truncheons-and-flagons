@@ -13,7 +13,7 @@
 .recentGamesList {
     list-style: none;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: flex-start;
     padding: 0;
 }
