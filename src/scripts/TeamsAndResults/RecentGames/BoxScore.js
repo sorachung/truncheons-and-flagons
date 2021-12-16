@@ -39,7 +39,7 @@ export const BoxScore = () => {
 	});
 
 	
-	let html = `<h1>Final Scores</h1>
+	let html = `<h1 class="boxScoreHeader">Final Score</h1>
                 <section class = "boxScore">`;
 
 	scoresArray.forEach((score) => {
@@ -48,22 +48,22 @@ export const BoxScore = () => {
         const thisScoreSort = scoresSortArray.find(sortScore => sortScore.id === score.id);
         
         if (thisScoreSort.winner === true) {
-            html += `<img src="./images/crown.png" alt="A golden crown" class="boxScoreCardChunk crownSpot winnerCrown" width="50" height="50" />`
+            html += `<img src="./images/crown.png" alt="A golden crown" class="boxScoreCardChunk crownSpotBox winnerCrown" width="50" height="50" />`
         } else {
-            html += `<div class="boxScoreCardChunk crownSpot loserCrown">
+            html += `<div class="boxScoreCardChunk crownSpotBox loserCrown">
                         </div>`
         }
 
 		html += `<h3 class="boxScoreCardChunk">${
 			teams.find((team) => team.id === score.teamId).name
 		}</h3>
-        <ul class="pointsList boxScoreCardChunk">
+        <ul class="pointsListBox boxScoreCardChunk">
             <li class="pointsListItem">Total: ${
 				score.round1Score + score.round2Score + score.round3Score
 			}</li>`;
 		
 		for (let i = 1; i < game.currentRound; i++) {
-			html += `<li class="pointsListItem">Round ${i}: ${
+			html += `<li class="pointsListItemBox">Round ${i}: ${
 				score[`round${i}Score`]
 			}</li>`;
 		}
@@ -72,7 +72,7 @@ export const BoxScore = () => {
 	});
 	
 	html += `</section>
-            <button class="button" id="backToGamesListButton">Back</button>` 
+            <button class="boxScoreButton button" id="backToGamesListButton">Back</button>` 
     
     return html;
 }

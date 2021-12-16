@@ -1,0 +1,39 @@
+.teamCreation {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+}
+
+.createTeamChunk {
+    flex: 1;
+}
+
+.teamCreation > .label {
+    font-size: 2em;
+}
+
+input.createTeamChunk {
+    background-color: transparent;
+    border: solid 2px transparent;
+    border-radius: 10px;
+}
+
+input.createTeamChunk::placeholder {
+    color: rgba(245, 245, 245, 0.70);;
+}
+
+input.createTeamChunk:hover {
+    cursor: pointer;
+    background-color: rgba(165, 42, 42, 0.7);
+}
+
+input.createTeamChunk:focus {
+    border: solid 2px whitesmoke;
+    outline: none;
+}
+
+.teamCreation > .button {
+    max-width: 75%;
+    align-self: center;
+    margin-bottom: 1%;
+}

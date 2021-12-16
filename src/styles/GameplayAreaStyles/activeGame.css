@@ -31,6 +31,8 @@ h1.activeGameChunk, h2.activeGameChunk, h3.scoreMenuCardChunk {
     text-align: center;
     background-color: transparent;
     border: none;
+    border-radius: 10px;
+    color: #f7b827;
 }
 
 .roundScore::placeholder {
@@ -39,11 +41,17 @@ h1.activeGameChunk, h2.activeGameChunk, h3.scoreMenuCardChunk {
 
 .roundScore:hover {
     cursor: pointer;
-    background-color: #f7b92796;
+    background-color: rgba(165, 42, 42, 0.7);;
 }
 
-.roundScore:hover::placeholder {
-    color: whitesmoke;
+input.roundScore:focus {
+    background-color: transparent;
+    outline: none;
+    border: solid whitesmoke 3px;
+}
+
+input.roundScore:focus::placeholder {
+    visibility: hidden;
 }
 
 .positionImage {

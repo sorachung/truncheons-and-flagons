@@ -3,15 +3,20 @@
     white-space: nowrap;
 }
 
-.header {
-    display: flex;
+.ticker-wrap {
+    position: fixed;
+    top: 0;
+    width: 100%;
     overflow: hidden;
+    background-color: #C89721;
+    padding-left: 100%;
+    box-sizing: content-box;
 }
 
 .ticker {
-    display: flex;
-    flex-direction: row;
-    padding-left: 100%;
+    display: inline-block;
+    white-space: nowrap;
+    padding-right: 100%;
     animation: ticker 30s infinite linear;
 }
 
@@ -23,4 +28,10 @@
     100% {
         transform: translateX(-100%);
     }
+}
+
+.teamTickerItem {
+    display: inline-block;
+
+    padding: 0 1em;
 }

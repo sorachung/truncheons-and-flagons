@@ -1,3 +1,9 @@
-.incompleteTeamList {
-    overflow: auto;
+div.teamListChunk {
+    font-size: 2em;
+}
+
+.joinTeamsList {
+    list-style: none;
+    text-align: left;
+    padding: 0px 5px;
 }

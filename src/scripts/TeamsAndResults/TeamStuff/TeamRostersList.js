@@ -4,7 +4,8 @@ export const TeamRostersList = () => {
     const teams = getTeams();
     const players = getPlayers();
 
-    let html = `<ul class="teamRostersListUl">`;
+    let html = `<div class="teamRostersListHeader">Team Rosters</div>
+                    <ul class="teamRostersListUl">`;
     html += teams
         .map((team) => {
             const playersInTeam = players.filter(
@@ -33,14 +34,14 @@ mainContainer.addEventListener("click", (clickEvent) => {
         const [, teamId] = clickEvent.target.id.split("--");
         const popup = document.getElementById(`teamRosterPopUp--${teamId}`)
 
-        const showPopups = document.getElementsByClassName("show")
-        if(showPopups.length > 0 ) {
-            for (const showPopup of showPopups) {
-                if(showPopup.id != popup.id){
-                    showPopup.classList.remove("show")
-                }
-            }
-        }
+        // const showPopups = document.getElementsByClassName("show")
+        // if(showPopups.length > 0 ) {
+        //     for (const showPopup of showPopups) {
+        //         if(showPopup.id != popup.id){
+        //             showPopup.classList.remove("show")
+        //         }
+        //     }
+        // }
         popup.classList.toggle("show");
         
     }

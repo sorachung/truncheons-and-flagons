@@ -4,10 +4,10 @@ const mainContainer = document.querySelector(".container");
 
 export const CreateTeam = () => {
 	return `
-        <label class="label" for="createTeam">Create a New Team </label>
-        <input type="text" id="createTeam" name="createTeam" />
-        <button class="button" id="createTeamBtn">Create a Team</button>
-        <p class="createTeamMessage"></p>
+        <label class="label createTeamChunk" for="createTeam">Create a New Team </label>
+        <input class="createTeamChunk" type="text" id="createTeam" name="createTeam" placeholder="Enter your team name..." />
+		<p class="createTeamMessage createTeamChunk"></p>
+        <button class="button createTeamChunk" id="createTeamBtn">Create a Team</button>       
         `;
 };
 
@@ -24,7 +24,7 @@ mainContainer.addEventListener("click", (event) => {
 				(team) => team.name.toLowerCase() === newTeamName.toLowerCase()
 			)
 		) {
-			message.innerHTML = `that team name already exists`;
+			message.innerHTML = `That team name already exists`;
 		} else if (newTeamName === "") {
 			message.innerHTMl = `please enter a team name`;
 		} else {

@@ -18,11 +18,15 @@
 }
 
 .scoreTitleCard {
-    border: black 1px solid;
     padding: 0 1em;
     font-weight: bold;
     display: table;
 }
+
+.activeScoreBoard__ticker .scoreCard {
+    border-left: solid 2px #C89721;
+}
+
 .scoreTitleCard h3 {
     display: table-cell;
     vertical-align: middle;
@@ -31,7 +35,6 @@
 
 
 table {
-    border: black 1px solid;
     padding: 0 1em;
 }
 
