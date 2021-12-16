@@ -42,7 +42,7 @@ export const GameSelect = () => {
         });
 
         return  `<div class="gameSelectCard" id="gameSelect--${game.id}">Game #${game.id}, Round ${game.currentRound}: ` + optionHTML.join(" | ") + `</div>`;
-      })
+      }).join("")
 
     html += `</section>`
 
