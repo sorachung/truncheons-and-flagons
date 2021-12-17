@@ -13,6 +13,11 @@ import { BackToSelectButton } from "./BackToSelectButton.js";
 //html
 export const NewGame = () => {
 	const teams = getTeams();
+	const scores = getScores();
+	const games = getGames();
+	//sort team names alphabetically
+	teams.sort((a,b) => a.name.localeCompare(b.name));
+
 	return `
         <h2 class="newGameChunk">New Game</h2>
         <h3 class="newGameChunk">Select Teams</h3>
@@ -22,8 +27,10 @@ export const NewGame = () => {
                     <option value="">Choose A Team</option>
                     ${teams
 						.map((team) => {
-							//only show teams with full rosters
-							if (team.totalPlayers >= 3) {
+							const myScores = scores.filter(score => score.teamId === team.id);
+							const myGames = games.filter(game => myScores.find(score => score.gameId === game.id));
+							//only show teams with full rosters and not currently in a game
+							if (team.totalPlayers >= 3 && !myGames.find(game => game.completed === false)) {
 								return `<option value="${team.id}">${team.name}</option>`;
 							}
 						})
@@ -38,7 +45,10 @@ export const NewGame = () => {
                     <option value="">Choose A Team</option>
                     ${teams
 						.map((team) => {
-							if (team.totalPlayers >= 3) {
+							const myScores = scores.filter(score => score.teamId === team.id);
+							const myGames = games.filter(game => myScores.find(score => score.gameId === game.id));
+							//only show teams with full rosters and not currently in a game
+							if (team.totalPlayers >= 3 && !myGames.find(game => game.completed === false)) {
 								return `<option value="${team.id}">${team.name}</option>`;
 							}
 						})
@@ -52,7 +62,10 @@ export const NewGame = () => {
                     <option value="">Choose A Team</option>
                     ${teams
 						.map((team) => {
-							if (team.totalPlayers >= 3) {
+							const myScores = scores.filter(score => score.teamId === team.id);
+							const myGames = games.filter(game => myScores.find(score => score.gameId === game.id));
+							//only show teams with full rosters and not currently in a game
+							if (team.totalPlayers >= 3 && !myGames.find(game => game.completed === false)) {
 								return `<option value="${team.id}">${team.name}</option>`;
 							}
 						})

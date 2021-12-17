@@ -4,6 +4,9 @@ const mainContainer = document.querySelector(".container");
 
 export const JoinTeam = () => {
 	const teams = getTeams();
+	//alphabetically sort team names
+	teams.sort((a,b) => a.name.localeCompare(b.name));
+
 	return `
 		<div class="joinTeamChunk">Join a Team</div>
         <input type="text" class="firstName joinTeamChunk" id="firstName" placeholder="Enter your first name..."></input>
