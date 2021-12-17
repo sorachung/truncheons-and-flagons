@@ -7,16 +7,14 @@ export const RecentGamesList = () => {
     const teams = getTeams();
     let html = '<h2 class="recentGamesHeader">Recent Game Results</h2><ul class="recentGamesList">';
     
-    // find only completed games to display and only the last 15
+    // find only completed games
     const completedGames = games.filter((game) => game.completed)
     if (completedGames.length > 1) {
         completedGames.sort((game1, game2) => game1.dateFinished - game2.dateFinished)
     }
-
-    if (completedGames.length > 10) {
-        completedGames.splice(0, 9)
-    }
     
+    // display only the last 10 games
+    completedGames.splice(0, completedGames.length - 10)
 
     completedGames.forEach((game) => {
         html += `<li class="recentGamesListItem" id="recentGamesList--${game.id}">
