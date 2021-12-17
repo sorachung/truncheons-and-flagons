@@ -78,8 +78,10 @@ mainContainer.addEventListener("click", (clickEvent) => {
 
 		//create our array to hold the promises
 		const promiseArray = [];
-		// variable used to check total of scores entered per round
-		let totalRoundScore = 0;
+		// // variable used to check total of scores entered per round
+		// let totalRoundScore = 0;
+
+		let hasNegativeNumber = false;
 		
 		//update round scores for all shallow score object copy things
 		scoresArray.forEach((score) => {
@@ -88,17 +90,25 @@ mainContainer.addEventListener("click", (clickEvent) => {
 			).value);
 			if (!newScore) {
 				newScore = 0;
+			} 
+			
+			if(newScore < 0) {
+				hasNegativeNumber = true;
+			} else {
+				score[`round${game.currentRound}Score`] = newScore;
 			}
-			score[`round${game.currentRound}Score`] = newScore;
-			// add score from each team 
-			totalRoundScore += newScore;
+			// // add score from each team 
+			// totalRoundScore += newScore;
 		});
 
-		// check if sum of the three teams scores are greater than 3
-		if(totalRoundScore > 3) {
-			window.alert("Round score total must not exceed 3.")
-		} else {
-				//update our game object shallow copy's round counter
+		// // check if sum of the three teams scores are greater than 3
+		// if(totalRoundScore > 3) {
+		// 	window.alert("Round score total must not exceed 3.")
+		// } else {
+			
+		//only do this stuff if there is NO negative score put in
+		if (!hasNegativeNumber) {
+			//update our game object shallow copy's round counter
 			game.currentRound++;
 
 			//split off what happens based on what round we are in (finished game)
@@ -136,8 +146,10 @@ mainContainer.addEventListener("click", (clickEvent) => {
 				});
 			}	
 
+		// }
+		} else {
+			window.alert("Negative scores are not allowed");
 		}
-
 		
 	}
 });

@@ -4,6 +4,9 @@ export const TeamList = () => {
 	const teams = getTeams();
 	let html = `<div class="teamListChunk">Incomplete Rosters</div>
                 <ul class="joinTeamsList teamListChunk">`;
+	//sort by open spots
+	teams.sort((a,b) => b.totalPlayers - a.totalPlayers);
+
 	html += teams
 		.map((team) => {
 			if (team.totalPlayers < 3) {

@@ -293,6 +293,34 @@
       "country": "Poland",
       "teamId": 17,
       "id": 42
+    },
+    {
+      "firstName": "Doug",
+      "lastName": "Dimmadome",
+      "country": "Dimmsdale",
+      "teamId": 18,
+      "id": 43
+    },
+    {
+      "firstName": "Hugh",
+      "lastName": "Neutron",
+      "country": "Pennsylvania",
+      "teamId": 18,
+      "id": 44
+    },
+    {
+      "firstName": "Spongebob",
+      "lastName": "Squarepants",
+      "country": "Bikini Bottom",
+      "teamId": 18,
+      "id": 45
+    },
+    {
+      "firstName": "Tweety",
+      "lastName": "Bird",
+      "country": "Sky",
+      "teamId": 4,
+      "id": 46
     }
   ],
   "teams": [
@@ -317,8 +345,8 @@
     {
       "id": 4,
       "name": "Flightless Canaries",
-      "seasonScore": 0,
-      "totalPlayers": 2
+      "seasonScore": 3,
+      "totalPlayers": 3
     },
     {
       "id": 5,
@@ -352,7 +380,7 @@
     },
     {
       "name": "The Infamous Instructors",
-      "seasonScore": 0,
+      "seasonScore": 2,
       "totalPlayers": 3,
       "id": 10
     },
@@ -370,7 +398,7 @@
     },
     {
       "name": "The Gang",
-      "seasonScore": 0,
+      "seasonScore": 3,
       "totalPlayers": 3,
       "id": 13
     },
@@ -382,13 +410,13 @@
     },
     {
       "name": "Tater Is Adorable",
-      "seasonScore": 0,
+      "seasonScore": 3,
       "totalPlayers": 3,
       "id": 15
     },
     {
       "name": "We Love Puppers",
-      "seasonScore": 0,
+      "seasonScore": 2,
       "totalPlayers": 3,
       "id": 16
     },
@@ -397,6 +425,12 @@
       "seasonScore": 0,
       "totalPlayers": 3,
       "id": 17
+    },
+    {
+      "name": "Dinkleburg's Trophy Case",
+      "seasonScore": 3,
+      "totalPlayers": 3,
+      "id": 18
     }
   ],
   "scores": [
@@ -768,7 +802,7 @@
       "teamId": 16,
       "round1Score": 2,
       "round2Score": 1,
-      "round3Score": 0,
+      "round3Score": -1,
       "round1PositionId": 2,
       "round2PositionId": 3,
       "round3PositionId": 1,
@@ -779,7 +813,7 @@
       "teamId": 10,
       "round1Score": 0,
       "round2Score": 1,
-      "round3Score": 0,
+      "round3Score": 1,
       "round1PositionId": 1,
       "round2PositionId": 2,
       "round3PositionId": 3,
@@ -790,7 +824,7 @@
       "teamId": 15,
       "round1Score": 1,
       "round2Score": 1,
-      "round3Score": 0,
+      "round3Score": 1,
       "round1PositionId": 3,
       "round2PositionId": 1,
       "round3PositionId": 2,
@@ -861,6 +895,39 @@
       "round2PositionId": 1,
       "round3PositionId": 2,
       "id": 42
+    },
+    {
+      "gameId": 15,
+      "teamId": 13,
+      "round1Score": 0,
+      "round2Score": 3,
+      "round3Score": 0,
+      "round1PositionId": 3,
+      "round2PositionId": 1,
+      "round3PositionId": 2,
+      "id": 43
+    },
+    {
+      "gameId": 15,
+      "teamId": 18,
+      "round1Score": 1,
+      "round2Score": 0,
+      "round3Score": 2,
+      "round1PositionId": 1,
+      "round2PositionId": 2,
+      "round3PositionId": 3,
+      "id": 44
+    },
+    {
+      "gameId": 15,
+      "teamId": 4,
+      "round1Score": 2,
+      "round2Score": 0,
+      "round3Score": 1,
+      "round1PositionId": 2,
+      "round2PositionId": 3,
+      "round3PositionId": 1,
+      "id": 45
     }
   ],
   "games": [
@@ -930,9 +997,10 @@
       "id": 11
     },
     {
-      "currentRound": 3,
-      "completed": false,
-      "id": 12
+      "currentRound": 4,
+      "completed": true,
+      "id": 12,
+      "dateFinished": 1639774566810
     },
     {
       "currentRound": 3,
@@ -943,6 +1011,12 @@
       "currentRound": 2,
       "completed": false,
       "id": 14
+    },
+    {
+      "currentRound": 4,
+      "completed": true,
+      "id": 15,
+      "dateFinished": 1639772759629
     }
   ],
   "positions": [

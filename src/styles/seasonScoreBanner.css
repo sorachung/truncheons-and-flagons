@@ -11,6 +11,7 @@
     background-color: #C89721;
     padding-left: 100%;
     box-sizing: content-box;
+    z-index: 100;
 }
 
 .ticker {

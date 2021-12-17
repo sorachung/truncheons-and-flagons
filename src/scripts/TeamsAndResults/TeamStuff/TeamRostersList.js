@@ -3,6 +3,8 @@ import { getPlayers, getTeams } from "../../dataAccess.js";
 export const TeamRostersList = () => {
     const teams = getTeams();
     const players = getPlayers();
+    //sort teams alphabetically
+    teams.sort((a,b) => {return a.name.localeCompare(b.name)});
 
     let html = `<div class="teamRostersListHeader">Team Rosters</div>
                     <ul class="teamRostersListUl">`;
