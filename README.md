@@ -32,9 +32,12 @@ The rules of the game were fairly simple, yet allowed for some subtlety.
 
 -   Create teams with custom team names
 -   Join teams by entering the contestant's name and country of origin
--   Displays scores of each team in a current game
--   Shows cumulative points for each team
--
+-   View players in each team
+-   Displays scores of each team in current games in a scrolling scoreboard above current game section
+-   Shows cumulative points for each team in a scrolling scoreboard at the top of the page
+-   Track each rounds' scores per team in gameplay area
+-   Save games to return to later, and continue saved games
+-   View recent games results
 
 ## Tech Stack
 
