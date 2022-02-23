@@ -33,3 +33,15 @@ The rules of the game were fairly simple, yet allowed for some subtlety.
 - Displays scores of each team in a current game
 - Shows cumulative points for each team
 - 
+
+## How to Use
+
+### Dependencies
+* [JSON Server](https://github.com/typicode/json-server)
+
+### Instructions
+#### Installation/Starting the app
+* clone the repository
+* install JSON Server with `npm install json-server` in api directory (add the -g flag if you'd like to install it globally)
+* host the api on port 8088 with `json-server -p 8088 database.json`
+* in src directory of repo, host the app on any port (I like to use [serve](https://www.npmjs.com/package/serve))
