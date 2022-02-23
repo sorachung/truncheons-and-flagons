@@ -1,4 +1,5 @@
 # truncheons-and-flagons
+
 Truncheons and Flagons was a popular game in taverns during the middle ages. This web app is a scorekeeper for the game.
 
 ## About the Game and its Rules
@@ -10,9 +11,9 @@ Since it was not an official game of the royalty or merchant classes at the time
 The rules of the game were fairly simple, yet allowed for some subtlety.
 
 1. There are three teams in a game of Truncheon & Flagons.
-    * The Knights
-    * The Fairies
-    * The Goblins
+    - The Knights
+    - The Fairies
+    - The Goblins
 1. Each team has three players.
 1. Six flagons of ale, mead, or wine are be arranged on a table. Four flagons making the corners of a square, and the fifth and sixth being placed in the middle of the square. The table should be in an area of a tavern where the teams had some ability to move around.
 1. Teams rotated between being the Knights, Fairies, and Goblins after each round.
@@ -28,13 +29,15 @@ The rules of the game were fairly simple, yet allowed for some subtlety.
 1. At the end of round three, whichever team has the most points earns the honor of drinking the contents of the six flagons.
 
 ## Features
-- Create teams with custom team names
-- Join teams by entering the contestant's name and country of origin
-- Displays scores of each team in a current game
-- Shows cumulative points for each team
-- 
+
+-   Create teams with custom team names
+-   Join teams by entering the contestant's name and country of origin
+-   Displays scores of each team in a current game
+-   Shows cumulative points for each team
+-
 
 ## Tech Stack
+
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -42,11 +45,20 @@ The rules of the game were fairly simple, yet allowed for some subtlety.
 ## How to Use
 
 ### Dependencies
-* [JSON Server](https://github.com/typicode/json-server)
+
+-   [JSON Server](https://github.com/typicode/json-server)
 
 ### Instructions
+
 #### Installation/Starting the app
-* clone the repository
-* install JSON Server with `npm install json-server` in api directory (add the -g flag if you'd like to install it globally)
-* host the api on port 8088 with `json-server -p 8088 database.json`
-* in src directory of repo, host the app on any port (I like to use [serve](https://www.npmjs.com/package/serve))
+
+-   clone the repository
+-   install JSON Server with `npm install json-server` in api directory (add the -g flag if you'd like to install it globally)
+-   host the api on port 8088 with `json-server -p 8088 database.json`
+-   in src directory of repo, host the app on any port (I like to use [serve](https://www.npmjs.com/package/serve))
+
+## Screenshots
+
+![shows teams](./media/teams.png)
+![shows game selection](./media/game-choice.png)
+![shows in game screen](./media/in-game.png)
